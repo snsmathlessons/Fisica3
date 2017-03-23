@@ -1,0 +1,13 @@
+*~
+*#
+*.save
+*.pdf
+*.bak
+*.zip
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
+*.dvi
+*.ps

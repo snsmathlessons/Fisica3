@@ -1,0 +1,84 @@
+\ProvidesPackage{StileFormulario}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[a4paper,twoside,top=0.5in,bottom=0.5in,left=0.5in,right=0.5in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor = {blue},
+  urlcolor = {red},
+  pageanchor = false
+}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\numberwithin{equation}{section}
+
+% --- Funzioni "Fisiche" molto utili
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\ensuremath{\oldvec{#1}\mkern 2mu\vphantom{#1}}}
+
+\let\oldhat\hat
+\renewcommand{\hat}[1]{\ensuremath{\oldhat{#1}\mkern 2mu\vphantom{#1}}}
+
+\let\divsymb\div
+\let\div\undefined
+\makeatletter
+\newcommand*\dotp{\mathpalette\dotp@{.4}}
+\newcommand*\dotp@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+\newcommand{\div}{\ensuremath{\vec{\nabla} \dotp}}
+\newcommand{\grad}{\ensuremath{\nabla}}
+\newcommand{\lapl}{\ensuremath{\nabla^2}}
+\newcommand{\rot}{\ensuremath{{\vec \nabla}\times}}
+
+\newcommand{\lrb}[1]{\ensuremath{\left({#1}\right)}}
+
+\newcommand{\abs}[1]{\left|{#1}\right|}
+
+\newenvironment{eqsystem}[1][rcl]{%
+  \begin{displaymath}
+    \left\{
+      \begin{array}{#1}
+}{
+      \end{array}
+    \right.
+  \end{displaymath}
+}
+
+\newenvironment{formula}[1][]{%
+  % \subsection*{{#1}}
+  {\bf {#1}}
+  \begin{equation*}
+  }{
+  \end{equation*}
+}
+
+% --- Aggeggi matematici, anche se penso serviranno poco
+%mathbb mathcal mathfrak e mathbm per le lettere dell'alfabeto e anche mathbb per quelle greche
+\def\mydeflett#1{\expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
+		\expandafter\def\csname c#1\endcsname{\mathcal{#1}}
+		\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}
+		\expandafter\def\csname bl#1\endcsname{\mathbf{#1}}}
+\def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
+\mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
+
+\def\mydeffrakmath#1{\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}}
+\def\mydefallfrak#1{\ifx#1\mydefallfrak\else\mydeffrakmath#1\expandafter\mydefallfrak\fi}
+\mydefallfrak abcdefghijklmnopqrstuvwxyz\mydefallfrak
+
+\def\mydefgreek#1{\expandafter\def\csname bl#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
+\def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
+   \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
+\mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
+
+\newcommand{\sse}{\Leftrightarrow}
+\newcommand{\Rar}{\Rightarrow}
+\newcommand{\rar}{\rightarrow}
+
