@@ -3,6 +3,25 @@
 \setlength{\columnsep}{1cm}
 \pagenumbering{gobble}
 \usepackage{StileFormulario}
+\renewcommand{\arraystretch}{1.15}
+
+\newcommand{\de}{{\ensuremath{ \mbox{d}}}}
+\newcommand{\norm}[1]{{\ensuremath{||{#1}||}}}
+\newcommand{\ang}[1]{{\ensuremath{\langle {#1}\rangle}}}
+\newcommand{\dpar}[2]{{\ensuremath{\frac{\partial {#1}}{\partial {#2}}}}}
+\newcommand{\Lusc}{{\ensuremath{L^{\vec{}}}}}
+
+\newcommand{\Pa}{ \text{ Pa} }
+\renewcommand{\bar}{ \text{ bar}}
+\newcommand{\atm}{ \text{ atm}}
+\newcommand{\Kg}{ \text{ Kg} }
+\newcommand{\m}{ \text{ m} }
+\newcommand{\N}{ \text{ N} }
+\newcommand{\C}{ \text{ C} }
+\newcommand{\J}{ \text{ J} }
+\renewcommand{\cal}{ \text{ cal} }
+\newcommand{\mol}{ \text{ mol} }
+\newcommand{\K}{ \text{ K} }
 
 \title{Formulario di Fisica 3}
 \date{}
@@ -12,20 +31,142 @@
 \maketitle
 
 \begin{multicols}{2}
+  {\bf Disclaimer}: Non sappiamo se in classe abbia usato $L_\text{uscente} = \Lusc$ oppure $L_\text{entrante}$.
+  
   \section{Termodinamica}
-  \begin{formula}[Capacità Termica]
-    C = \frac{Q}{T}
+  {\vskip 1em \large\bf Tavola delle costanti}\vskip 0.5em
+  \begin{tabular}{lll}
+    $R$       & $8,31 \frac{\J}{\mol \K}$                                 & costante universale dei gas \\
+    $N_A$     & $6,022 \cdot 10^{23} \frac{1}{\mol}$                      & numero di Avogadro          \\
+    $k = k_B$ & $k_B = \frac{R}{N_A} = 1,38 \cdot 10^{-23} \frac{\J}{\K}$ & costante di Boltzmann       \\
+  \end{tabular}
+
+  \vskip 1.5em
+  \begin{tabular}{lll}
+    {\bf Simbolo} &                                    & {\bf Unità di Misura}                  \\
+    $p$           & pressione                          & $1 \Pa = 1 \frac{\N}{\m^2}$            \\
+    $V$           & volume                             &                                        \\
+    $n$           & numero di moli                     & $n = \frac{N}{N_A}$                    \\
+    $T$           & temperatura assoluta               & $K$                                    \\
+    $C_V$         & calore molare a volume costante    & {\it SOLO PER I GAS, NON PER I SOLIDI} \\
+    $C_P$         & calore molare a pressione costante &                                        \\
+  \end{tabular}
+
+  \begin{formula}[Conversioni di unità di misure]
+    1 \bar = 100 000 \Pa     \\
+    1 \atm = 1,013 \bar      \\
+    273,15 \K = 0 \degree \C \\
+    1 \cal = 4,186 \J        \\
   \end{formula}
   
-  \begin{formula}[Caloria]
-    1 \mbox{ caloria } = 4.186 \mbox{ J}
+  \begin{formula}[Primo principio della Termodinamica]
+    \de U = \de Q - \de \Lusc \\
+    \Lusc = \int p \de V  \\
   \end{formula}
 
-  \begin{formula}[Equazione di Stato dei gas Perfetti]
-    pV = nRT
+  \begin{formula}[Energia Interna]
+    U = \frac{l}{2}nRT = n C_V T
   \end{formula}
-  Dove ricordiamo che $p$ è la pressione, $V$ è il volume, $n = \frac{N}{N_0}$ numero di moli, $R$ è la costante dei gas, $T$ è la temperatura assoluta.
+  con $C_V$ il calore molare a volume costante, $C_V(T) = \dpar{U}{T}$
+  \begin{itemize}
+  \item Gas Monoatomici: $l=3$.
+  \item Gas Biatomici: $l=5$.
+  \item Solidi: $l=6$.
+  \end{itemize}
+
+  \begin{formula}[Equazione di Stato dei gas Perfetti]
+    pV = nRT = NkT
+  \end{formula}
+
+  \begin{formula}[Relazione di Mayer]
+    C_P - C_V = R              \\
+    \gamma = \frac{C_P}{C_V}   \\
+    \frac{R}{C_V} = \gamma - 1 \\
+  \end{formula}
+
+  \begin{formula}[Leggi Universali]
+    \Delta U = Q - \Lusc                                                                      \\
+    U = n C_V T = \frac{1}{\gamma -1} nRT                                                          \\
+    \Delta S = nC_V \log \left( \frac{T_2}{T_1} \right) + n R \log \left( \frac{V_2}{V_1} \right)  \\
+    \Delta S = n C_P \log \left( \frac{T_2}{T_1} \right) - n R \log \left( \frac{p_2}{p_1} \right) \\
+  \end{formula}
   
+  \begin{formula}[Isobara ($p$ costante)]
+    \Delta U = n C_V \Delta T                            \\
+    Q = n C_P \Delta T                                   \\
+    \Lusc = nR \Delta T = p \Delta V                \\
+    \Delta S = n C_P \log \left( \frac{T_2}{T_1} \right) \\
+  \end{formula}
+	
+  \begin{formula}[Isoterma ($T$ costante)]
+    \Delta U = 0 \implies Q = \Lusc                 \\
+    Q = nRT \log \left( \frac{V_2}{V_1} \right)          \\
+    \Lusc = nRT \log \left( \frac{V_2}{V_1} \right) \\
+    \Delta S = nR \log \left( \frac{V_2}{V_1} \right)    \\
+  \end{formula}
+
+  \begin{formula}[Isocora ($V$ costante)]
+    \Delta U = n C_V \Delta T                            \\
+    Q = n C_V \Delta T                                   \\
+    \Lusc = 0                                       \\
+    \Delta S = n C_V \log \left( \frac{T_2}{T_1} \right) \\
+  \end{formula}
+
+  \begin{formula}[Adiabatica reversibile senza scambio di calore]
+    \Delta U = n C_V \Delta T                                          \\
+    Q = 0                                                              \\
+    \Lusc = \Delta U = n C_V \Delta T = \frac{\Delta (pV)}{1 - \gamma} \\
+    pV^\gamma = \text{cost}                                            \\
+    TV^{\gamma -1} = \text{cost}                                       \\
+    pT^{\frac{\gamma}{1-\gamma}} = \text{cost}                         \\
+  \end{formula}
+
+  \begin{formula}[Relazioni sui $\de$ qualcosa]
+    \de{U} + \de{\Lusc} = \de{Q}                                   \\
+    pV = nRT \implies p\de{V} + V\de{p} = nR\de{T}                      \\
+    \de{\Lusc} = p\de{V},                                          \\
+    \de{U} = nC_V \de{T}                                                \\
+    \de{U} \frac{R}{C_V} = nR\de{T} = \de{\Lusc} + V\de{p} =       \\
+    = \de{Q} - \de{U} + V\de{p} \implies \de{Q} = nC_P \de{T} - V\de{p} \\
+  \end{formula}
+
+  \begin{formula}[Legge di Van der Waals]
+    (p+a\frac{n^2}{V^2})(V-nb) = nRT
+  \end{formula}
+
+  {\bf Fatti generici}
+  \begin{itemize}
+  \item Entropia per i Gas Perfetti: $S = nc_v \log T + nR \log \frac{V}{n}$
+  \item Calore assorbito (per i non-gas): $\mbox{d}Q = c m \mbox{d}T$, con $c$ calore specifico del corpo.
+  \item Entropia: $T \mbox{d}S = \mbox{d}U + p \mbox{d}V$, $\mbox{d}S = \left(\frac{\mbox{d}Q}{T}\right)_{\mbox{reversibile}}$
+  \item Calore assorbito (per i gas): $\mbox{d}Q = n c_v \mbox{d}T$
+  \item Energia libera (o potenziale di Helmholz): $F = U - TS$
+  \item Entalpia: $H = U + PV$, $\Delta H < 0$ per trasformazioni spontanee.
+  \item Energia libera di Gibbs: $G = H - TS$
+  \end{itemize}
+
+  \begin{itemize}
+  \item Capacità Termica di un corpo: $C = \frac{\Delta Q}{\Delta T}$
+  \item Conduzione: $\frac{Q}{\Delta t} = \frac{k A \Delta T}{d}$; $k$ conducibilit\`a termica, $A$ Area, $d$ spessore parete.
+  \item Irraggiamento: $\frac{\de E}{\de t} = \varepsilon \sigma A (\Delta T^4)$, $\varepsilon$ emissivit\`a, $\sigma$ costante di Stefan-Boltzmann.
+  \end{itemize}
+
+  \subsection*{Ciclo di Carnot}
+  Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma
+  
+  \begin{itemize}
+  \item Rendimento di un ciclo: $\eta = \frac{\Lusc}{Q_{ass}}$
+  \item Coefficiente di effetto frigogeno: $\mbox{COP} = \frac{Q_{\mbox{tolto al frigo}}}{L}$
+  \end{itemize}
+
+  \subsection*{``Approfondimento''}
+  \begin{itemize}
+  \item Legge di Dalton: "In una miscela di gas la pressione totale \`e uguale alla somma delle pressioni parziali dei suoi gas componenti". $$P_{TOT} = \frac{RT}{V}\left( \sum_{i} n_i \right)$$
+  \item Forza media che {\bf una} molecola esercita sul contenitore cubico di lato $L$: $\norm{\vec{F}} = \frac{mv^2}{L}$
+  \item Forza totale esercitata dal gas: $\norm{\vec{F}} = \frac{1}{3}N \left(\frac{m \ang{v^2}}{L} \right)$, con $\ang{v^2}$ valor medio del quadrato della velocit\`a. $v_{qm} := (\ang{v^2})^{\frac{1}{2}}$ \`e la velocit\`a quadratica media.
+  \item $P = \frac{\norm{\vec{F_{TOT}}}}{L^2} = \frac{2}{3} N \left(\frac{1}{2}m {v_{qm}^{2}} \right) \frac{1}{V} = \frac{2}{3} N \ang{E_{cin}}$, $\ang{E_{cin}} = \frac{l}{2}K_BT = \frac{1}{2}m{v_{qm}^\frac{1}{2}}$, $l$ gradi di libert\`a.
+  \end{itemize}
+
 \end{multicols}
 \end{document}
 

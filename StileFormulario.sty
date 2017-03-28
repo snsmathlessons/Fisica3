@@ -17,6 +17,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{array}
+\usepackage{gensymb}
+
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
 
 \numberwithin{equation}{section}
 
@@ -54,10 +60,13 @@
 
 \newenvironment{formula}[1][]{%
   % \subsection*{{#1}}
+  {\vskip 1em}
   {\bf {#1}}
-  \begin{equation*}
+  \begin{center}
+    \begin{tabular}{L}
   }{
-  \end{equation*}
+    \end{tabular}
+  \end{center}
 }
 
 % --- Aggeggi matematici, anche se penso serviranno poco
