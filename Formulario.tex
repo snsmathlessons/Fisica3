@@ -31,7 +31,8 @@
 \maketitle
 
 \begin{multicols}{2}
-  {\bf Disclaimer}: Non sappiamo se in classe abbia usato $L_\text{uscente} = \Lusc$ oppure $L_\text{entrante}$.
+  {\bf Disclaimer}: In classe pare usi $L_\text{entrante}=L$: è positivo se comprimo il gas.
+  A volte compare $L_{uscente}=\Lusc=-L$.
   
   \section{Termodinamica}
   {\vskip 1em \large\bf Tavola delle costanti}\vskip 0.5em
@@ -59,19 +60,80 @@
     1 \cal = 4,186 \J        \\
   \end{formula}
   
+\begin{formula}[Variabili termodinamiche]
+\end{formula}
+Dato un sistema descritto da delle variabili termodinamiche.
+Date $n$ sostanze in $f$ fasi, occorrono $2+n-f$ variabili indipendenti per descrivere il sistema, che chiameremo {\it variabili termodinamiche indipendenti}.
+
+Molto spesso useremo un gas ($f=1$) omogeneo ($n=1$), per cui necessitiamo di $2$ variabili termodinamiche indipendenti, per esempio $(p,V)$ oppure $(T,p)$. (oppure forse $(S,T)$, non sappiamo che vuol dire).
+
+Quindi si ha che le variabili termodinamiche sono legate tra loro da alcune equazioni, dette equazioni di stato.
+
+In pratica, se $(p,V,T)$ descrivono il sistema, deve esistere una equazione che le lega, quindi $F(p,V,T)=0$. L'espressione di $F$ è data a priori e dipende dal sistema.
+
+Una funzione di stato è una funzione che dipende dalle variabili termodinamiche del sistema. Esempi: Entropia $S$ e Energia Interna $U$.
+
+Quando la funzione di stato è $F(p,V,T)$ si può spesso ricavare una variabile in funzione delle altre e quindi una volta scritta $p(v,T)= cost$ con il Teorema del Dini si ricavano le relazioni tra le derivate. (In particolare vale che il prodotto ciclico è $-1$.)
+
+In generale, nel calcolare la quantità $\frac{\partial x}{\partial y}$ supporremo fissata la quantità $z$, dove $x,y,z$ sono le nostre variabili termodinamiche.
+
+\begin{formula}[Coefficienti]
+\text{coefficiente di espansione volumica:}\\
+\beta=\frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_{p fisso} \\
+\text{coefficiente di compressibilità isoterma:}\\
+\kappa=-\frac{1}{V} \left( \frac{\partial V}{\partial p} \right)_{T fisso}
+
+\end{formula}
+\begin{formula}[Relazioni di Maxwell per gas omogeneo]
+\text{anche qua l'altra variabile è fissata}\\
+\frac{\partial T}{\partial p}=\frac{\kappa}{\beta} \quad
+\frac{\partial T}{\partial V}=\frac{1}{\beta V} \\
+\frac{\partial p}{\partial T}=\frac{\beta}{\kappa} \quad
+\frac{\partial p}{\partial V}=-\frac{1}{\kappa V}\\
+\frac{\partial V}{\partial T}=\beta V \quad
+\frac{\partial V}{\partial p}=-\kappa V
+\end{formula}
+  
+\begin{formula}[Lavoro su un solido]
+ \de T=0 \\
+ L=-\int p \de V \\
+ \de V= - \kappa V \de P \\
+ L=\int^{p_2}_{p_1} \kappa V p \de p \cong \frac{\kappa V}{2} (p_2^2 -p_1^2)
+\end{formula}
+  
+  
   \begin{formula}[Primo principio della Termodinamica]
-    \de U = \de Q - \de \Lusc \\
-    \Lusc = \int p \de V  \\
+  \text{rappresenta la conservazione dell'energia}\\
+  \text{definisco il calore in questo modo} \\
+    \de U = \delta Q + \delta L \\
+    L =- \int p \de V  \\
   \end{formula}
 
-  \begin{formula}[Energia Interna]
-    U = \frac{l}{2}nRT = n C_V T
+Per equazioni di stato generiche non è chiaro come calcolare $U$ oppure $\delta Q$. 
+Vorremmo definire $C=\frac{\delta Q}{\partial T}$, ma questo dipende dalla trasformazione. Se riscaldiamo a volume costante otteniamo $C=C_V$, se riscaldiamo a pressione costante otteniamo $C=C_p$.
+
+\begin{formula}[Calori specifici]
+  C_V = \dpar{U}{T}\\
+  \text{$C_V$ è il calore a volume costante}\\
+  
+  C_p= C_V + \left[ \dpar{U}{V} + p \right] V \beta \\
+  \text{$C_p$ è il calore a pressione costante}\\
+\end{formula}
+
+Queste formule sono utili quando ci viene data una qualsiasi equazione di stato e qualsiasi energia interna.
+
+\begin{formula}[Secondo principio termodinamica]
+\end{formula}
+
+
+  \begin{formula}[Energia Interna per i gas perfetti]
+    U = \frac{\ell}{2}nRT = n c_V T=C_V T
   \end{formula}
-  con $C_V$ il calore molare a volume costante, $C_V(T) = \dpar{U}{T}$
+
   \begin{itemize}
-  \item Gas Monoatomici: $l=3$.
-  \item Gas Biatomici: $l=5$.
-  \item Solidi: $l=6$.
+  \item Gas Monoatomici: $\ell =3$.
+  \item Gas Biatomici: $\ell =5$.
+  \item Solidi: $\ell =6$.
   \end{itemize}
 
   \begin{formula}[Equazione di Stato dei gas Perfetti]
@@ -79,23 +141,23 @@
   \end{formula}
 
   \begin{formula}[Relazione di Mayer]
-    C_P - C_V = R              \\
-    \gamma = \frac{C_P}{C_V}   \\
-    \frac{R}{C_V} = \gamma - 1 \\
+    c_p - c_V = R              \\
+    \gamma = \frac{c_p}{c_V}   \\
+    \frac{R}{c_V} = \gamma - 1 \\
   \end{formula}
 
-  \begin{formula}[Leggi Universali]
+  \begin{formula}[Leggi per trasformazione generica, per gas perfetti]
     \Delta U = Q - \Lusc                                                                      \\
-    U = n C_V T = \frac{1}{\gamma -1} nRT                                                          \\
-    \Delta S = nC_V \log \left( \frac{T_2}{T_1} \right) + n R \log \left( \frac{V_2}{V_1} \right)  \\
-    \Delta S = n C_P \log \left( \frac{T_2}{T_1} \right) - n R \log \left( \frac{p_2}{p_1} \right) \\
+    U = n c_V T = \frac{1}{\gamma -1} nRT                                                          \\
+    \Delta S = nc_V \log \left( \frac{T_2}{T_1} \right) + n R \log \left( \frac{V_2}{V_1} \right)  \\
+    \Delta S = n c_p \log \left( \frac{T_2}{T_1} \right) - n R \log \left( \frac{p_2}{p_1} \right) \\
   \end{formula}
   
   \begin{formula}[Isobara ($p$ costante)]
-    \Delta U = n C_V \Delta T                            \\
-    Q = n C_P \Delta T                                   \\
+    \Delta U = n c_V \Delta T                            \\
+    Q = n c_p \Delta T                                   \\
     \Lusc = nR \Delta T = p \Delta V                \\
-    \Delta S = n C_P \log \left( \frac{T_2}{T_1} \right) \\
+    \Delta S = n c_p \log \left( \frac{T_2}{T_1} \right) \\
   \end{formula}
 	
   \begin{formula}[Isoterma ($T$ costante)]
@@ -106,40 +168,51 @@
   \end{formula}
 
   \begin{formula}[Isocora ($V$ costante)]
-    \Delta U = n C_V \Delta T                            \\
-    Q = n C_V \Delta T                                   \\
+    \Delta U = n c_V \Delta T                            \\
+    Q = n c_V \Delta T                                   \\
     \Lusc = 0                                       \\
-    \Delta S = n C_V \log \left( \frac{T_2}{T_1} \right) \\
+    \Delta S = n c_V \log \left( \frac{T_2}{T_1} \right) \\
   \end{formula}
 
   \begin{formula}[Adiabatica reversibile senza scambio di calore]
-    \Delta U = n C_V \Delta T                                          \\
+    \Delta U = n c_V \Delta T                                          \\
     Q = 0                                                              \\
-    \Lusc = \Delta U = n C_V \Delta T = \frac{\Delta (pV)}{1 - \gamma} \\
+    \Lusc = \Delta U = n c_V \Delta T = \frac{\Delta (pV)}{1 - \gamma} \\
     pV^\gamma = \text{cost}                                            \\
     TV^{\gamma -1} = \text{cost}                                       \\
     pT^{\frac{\gamma}{1-\gamma}} = \text{cost}                         \\
+    \text{l'entropia non varia, verificare}
   \end{formula}
+  
+ 
+  \textbf{ Espansione libera} \\
+  In generale vale $$\delta Q=0, \delta L=0 \Rightarrow U=cost$$
+  Nel caso dei gas perfetti, per definizione, vale $\de T=0$, cioè la temperatura, e quindi l'energia interna, non cambia.
+  $\Delta U=0$.
+  Prendendo un'isoterma che passa per il punto iniziale e finale si calcola che $\Delta S = nR \log \left( \frac{V_2}{V_1} \right) $
 
-  \begin{formula}[Relazioni sui $\de$ qualcosa]
-    \de{U} + \de{\Lusc} = \de{Q}                                   \\
+
+  \begin{formula}[Relazioni sui differenziali]
+    \de{U} + \delta \Lusc = \delta{Q}                                   \\
     pV = nRT \implies p\de{V} + V\de{p} = nR\de{T}                      \\
-    \de{\Lusc} = p\de{V},                                          \\
-    \de{U} = nC_V \de{T}                                                \\
-    \de{U} \frac{R}{C_V} = nR\de{T} = \de{\Lusc} + V\de{p} =       \\
-    = \de{Q} - \de{U} + V\de{p} \implies \de{Q} = nC_P \de{T} - V\de{p} \\
+    \delta \Lusc  = p\de{V},                                          \\
+    \de{U} = nc_V \de{T}                                                \\
+    \de{U} \frac{R}{c_V} = nR\de{T} = \delta \Lusc + V\de{p} =       \\
+    = \delta {Q} - \de{U} + V\de{p} \implies \delta {Q} = nc_p \de{T} - V\de{p} \\
   \end{formula}
 
   \begin{formula}[Legge di Van der Waals]
     (p+a\frac{n^2}{V^2})(V-nb) = nRT
   \end{formula}
 
+
+
   {\bf Fatti generici}
   \begin{itemize}
-  \item Entropia per i Gas Perfetti: $S = nc_v \log T + nR \log \frac{V}{n}$
+  \item Entropia per i Gas Perfetti: $S = nc_V \log T + nR \log \frac{V}{n}$
   \item Calore assorbito (per i non-gas): $\mbox{d}Q = c m \mbox{d}T$, con $c$ calore specifico del corpo.
   \item Entropia: $T \mbox{d}S = \mbox{d}U + p \mbox{d}V$, $\mbox{d}S = \left(\frac{\mbox{d}Q}{T}\right)_{\mbox{reversibile}}$
-  \item Calore assorbito (per i gas): $\mbox{d}Q = n c_v \mbox{d}T$
+  \item Calore assorbito (per i gas): $\mbox{d}Q = n c_V \mbox{d}T$
   \item Energia libera (o potenziale di Helmholz): $F = U - TS$
   \item Entalpia: $H = U + PV$, $\Delta H < 0$ per trasformazioni spontanee.
   \item Energia libera di Gibbs: $G = H - TS$
