@@ -60,8 +60,7 @@
     1 \cal = 4,186 \J        \\
   \end{formula}
   
-\begin{formula}[Variabili termodinamiche]
-\end{formula}
+\textbf{Variabili termodinamiche}\\
 Dato un sistema descritto da delle variabili termodinamiche.
 Date $n$ sostanze in $f$ fasi, occorrono $2+n-f$ variabili indipendenti per descrivere il sistema, che chiameremo {\it variabili termodinamiche indipendenti}.
 
@@ -120,9 +119,10 @@ Vorremmo definire $C=\frac{\delta Q}{\partial T}$, ma questo dipende dalla trasf
   \text{$C_p$ è il calore a pressione costante}\\
 \end{formula}
 
-Queste formule sono utili quando ci viene data una qualsiasi equazione di stato e qualsiasi energia interna.
+Queste formule sono utili quando ci viene data una qualsiasi equazione di stato e qualsiasi energia interna. Nel caso generale $C_V$ e $C_p$ possono non essere costanti, tipicamente dipendono dalla temperatura. Nel caso dei gas perfetti sono costanti.
 
 \begin{formula}[Secondo principio termodinamica]
+
 \end{formula}
 
 
@@ -192,13 +192,15 @@ Queste formule sono utili quando ci viene data una qualsiasi equazione di stato 
   Prendendo un'isoterma che passa per il punto iniziale e finale si calcola che $\Delta S = nR \log \left( \frac{V_2}{V_1} \right) $
 
 
-  \begin{formula}[Relazioni sui differenziali]
+  \begin{formula}[Relazioni sui differenziali, gas perfetto]
     \de{U} + \delta \Lusc = \delta{Q}                                   \\
     pV = nRT \implies p\de{V} + V\de{p} = nR\de{T}                      \\
     \delta \Lusc  = p\de{V},                                          \\
     \de{U} = nc_V \de{T}                                                \\
     \de{U} \frac{R}{c_V} = nR\de{T} = \delta \Lusc + V\de{p} =       \\
     = \delta {Q} - \de{U} + V\de{p} \implies \delta {Q} = nc_p \de{T} - V\de{p} \\
+    \text{Vale anche:}\\
+    \delta Q= \de U - \delta L= C_V \de T + p \de V
   \end{formula}
 
   \begin{formula}[Legge di Van der Waals]
