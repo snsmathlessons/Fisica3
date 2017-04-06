@@ -108,15 +108,15 @@ In generale, nel calcolare la quantità $\frac{\partial x}{\partial y}$ supporre
     L =- \int p \de V  \\
   \end{formula}
 
-Per equazioni di stato generiche non è chiaro come calcolare $U$ oppure $\delta Q$. 
-Vorremmo definire $C=\frac{\delta Q}{\partial T}$, ma questo dipende dalla trasformazione. Se riscaldiamo a volume costante otteniamo $C=C_V$, se riscaldiamo a pressione costante otteniamo $C=C_p$.
+Per equazioni di stato generiche non è chiaro come calcolare $U$ oppure $\delta Q$. \\
+Vorremmo definire la capacità termica $C=\frac{\delta Q}{\de T}$, ma questa dipende dalla trasformazione. Se riscaldiamo a volume costante otteniamo $C=C_V$, se riscaldiamo a pressione costante otteniamo $C=C_p$.
 
-\begin{formula}[Calori specifici]
+\begin{formula}[Capacità termica]
   C_V = \dpar{U}{T}\\
-  \text{$C_V$ è il calore a volume costante}\\
+  \text{$C_V$ è la capacità termica a volume costante}\\
   
   C_p= C_V + \left[ \dpar{U}{V} + p \right] V \beta \\
-  \text{$C_p$ è il calore a pressione costante}\\
+  \text{$C_p$ è la capacità termica a pressione costante}\\
 \end{formula}
 
 Queste formule sono utili quando ci viene data una qualsiasi equazione di stato e qualsiasi energia interna. Nel caso generale $C_V$ e $C_p$ possono non essere costanti, tipicamente dipendono dalla temperatura. Nel caso dei gas perfetti sono costanti.
@@ -124,6 +124,7 @@ Queste formule sono utili quando ci viene data una qualsiasi equazione di stato 
 \textbf{Principio zero della termodinamica} \\
 Se $A$ è in equilibrio con $B$ e $B$ è in equilibrio con $C$ allora $A$ è in equilibrio con $C$.
 In cui con equilibrio termodinamico si intender equilibrio termico, meccanico, chimico, ecc.
+
 \textbf{Secondo principio termodinamica} \\
 Enunciato secondo \textbf{Kelvin-Planck}: è impossibile costruire una macchina termica che, operando in un ciclo, produca il solo effetto di convertire calore in un equivalente quantitativo di lavoro.
 
@@ -131,21 +132,21 @@ Enunciato secondo \textbf{Clausius}: è impossibile costruire una macchina frigo
 
 Enunciato secondo \textbf{Carnot}: L'efficiennza di un Ciclo di Carnot reversibile dipende solo dalle temperature delle due sorgenti tra cui opera. Un macchina di Carnot rappresenta una tra le macchine termiche più efficiente tra quelle operanti tra sorgenti a temperature fissate.
 
-Enunciato secondo \textbf{Caratheodory}: 
+Enunciato secondo \textbf{Caratheodory}: Per ogni condizione iniziale $(p,V,T)$ e per ogni intorno (di $\bbR^3$) di questa condizione esiste un punto non raggiungibile dal punto iniziale tramite una trasformazione adiabatica reversibile. Questo è equivalente a $\delta Q= T dS$.
 
-\textbf{Tipi di cicli}
-Ciclo di \textbf{Otto, }:
-Ciclo \textbf{Diesel}:
-Ciclo di \textbf{Carnot}:
+Enunciato "moderno": In un sistema isolato vale $\frac{\de S}{\de t} \ge 0$, $t$ è il tempo.
+
 
 \textbf{Trasformazione termodinamica reversibile} \\
-Una trasformazione termodinamica reversibile è una successione di trasformazioni infinitesime che passa istante per istante per degli stati di equilibrio e tale che esiste una trasformazione che riporta il sistema e anche l'esterno nello stato iniziale.
+Una trasformazione termodinamica reversibile è una successione di trasformazioni infinitesime che passa istante per istante per degli stati di equilibrio e tale che la trasformazione inversa riporti il sistema e anche l'esterno nello stato iniziale.
 In pratica si può disegnare sul piano $(V,p)$.
 
+Esiste una trasformazione quasi-statica ma non reversibile.
+
 \textbf{Entropia} \\
-Come conseguenza del secondo principio si ha che $$ _R \oint \frac{\delta Q}{T}=0$$. \\
+Come conseguenza del secondo principio si ha che $$ _{_{_R}} \oint \frac{\delta Q}{T}=0$$. \\
 In cui con la $R$ si intende che l'integrale è calcolato lungo una trasformazione reversibile, ovvero lungo un cammino sul piano $(V,p)$.
-Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di stati $A$ e $B$ valga $$S(B)-S(A)= _R \int_{A\rightarrow B} \frac{\delta Q}{T}$$
+Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di stati $A$ e $B$ valga $$S(B)-S(A)= _{_{_R}}\int_{A\rightarrow B}  \frac{\delta Q}{T}$$
 
 
 
@@ -170,6 +171,7 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
     \gamma = \frac{c_p}{c_V}   \\
     \frac{R}{c_V} = \gamma - 1 \\
   \end{formula}
+  $c_p$ è la capacità termica molare a pressione costante, anche detto calore molare a pressione costante, ovvero $\frac{C_p}{n}$, in cui $n$ è il numero di moli. $c_V$ è analogo.
 
   \begin{formula}[Leggi per trasformazione generica, per gas perfetti]
     \Delta U = Q - \Lusc                                                                      \\
@@ -239,9 +241,9 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
   \item Entropia per i Gas Perfetti: $S = nc_V \log T + nR \log \frac{V}{n}$
   \item Calore assorbito (per i non-gas): $\mbox{d}Q = c m \mbox{d}T$, con $c$ calore specifico del corpo.
   \item Entropia: $T \mbox{d}S = \mbox{d}U + p \mbox{d}V$, $\mbox{d}S = \left(\frac{\mbox{d}Q}{T}\right)_{\mbox{reversibile}}$
-  \item Calore assorbito (per i gas): $\mbox{d}Q = n c_V \mbox{d}T$
+  \item Calore assorbito (per i gas): $\mbox{d}Q = n c_V \mbox{d}T$, con $c_V$ capacità termica molare a volume costante, anche detto calore molare a pressione costante. Attento che può dipendere dal libro.
   \item Energia libera (o potenziale di Helmholz): $F = U - TS$
-  \item Entalpia: $H = U + PV$, $\Delta H < 0$ per trasformazioni spontanee.
+  \item Entalpia: $H = U + pV$, $\Delta H < 0$ per trasformazioni spontanee.
   \item Energia libera di Gibbs: $G = H - TS$
   \end{itemize}
 
@@ -254,14 +256,30 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
 
 
 \textbf{Ciclo di Carnot} \\
-Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma
+Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma. \\
+Compressione $=$ volume diminuisce (dal latino comprimére). \\
+$\eta = 1- \frac{T_L}{T_H}$
 
 \textbf{Ciclo di Stirling} \\
-bla bla
+Isocora ($p$ aumenta), Espansione Isoterma, Isocora ($p$ diminuisce), Compressione Isoterma. \\
+$\eta = 1- \frac{T_L}{T_H}$
 
-\textbf{Rendimento di un ciclo} \\
-Il rendimento si calcola di un ciclo che effettua degli scambi di calore tra due sorgenti, per esempio per un ciclo di Carnot o un ciclo Stirling.
-Inserire i due disegni. 
+\textbf{Ciclo Otto, Gasoline} \\
+Isocora ($p$ aumenta) (da $T_2$ a $T_3$), Espansione adiabatica, Isocora ($p$ diminuisce), Compressione Isocora. \\
+$\eta = 1- \frac{T_1}{T_2}$
+
+\textbf{Ciclo Diesel} \\
+Compressione adiabatica (da $T_1$ a $T_2$), Espansione Isobara, Espansione Adiabatica, Isobara ($p$ diminuisce). \\
+$\eta= 1-\frac{1}{\gamma} \frac{r^\gamma -1}{r-1} \frac{T_1}{T_2}$ \\
+$r=\frac{V_1}{V_3}$, $\gamma$ è quello delle relazioni di Mayer.
+
+
+\textbf{Rendimento di un ciclo generico} \\
+Posso sempre interpretare un ciclo reversibile come una macchina termica che opera tra infinite sorgenti, una per ogni temperatura raggiunta dal sistema durante il ciclo. Questa è un'ipotesi necessaria affinché il ciclo sia reversibile. 
+Geometricamente ciò corrisponde a sezionare il ciclo con delle isoterme. 
+Operativamente per calcolare il rendimento si calcola il calore netto $\delta Q(T)$ scambiato con ogni sorgente $T$. Definiamo poi $Q_{ass}=\sum_T \max\{ \delta Q(T), 0 \}$, in pratica sommiamo, sorgente per sorgente, solo i calori che entrano nella macchina.
+Il lavoro è l'area racchiusa dalla curva.
+  
   
   \begin{itemize}
   \item Rendimento di una macchina termica: $\eta = \frac{\Lusc}{Q_{ass}}$
@@ -270,6 +288,9 @@ Inserire i due disegni.
 
   \subsection*{``Approfondimento''}
   \begin{itemize}
+  \item Equazione di Clapeyron: descrive la variazione della pressione con la temperatura della curva di equilibrio (di solito si pensa nel piano $(T,p)$) tra due fasi di una stessa sostanza (è una curva per la regola delle fasi: $n=1$, $f=2$): $$\frac{\de p}{\de T} =\frac{\lambda}{T (v_B - v_A)}$$. \\
+  $\lambda$ è il calore latente (per unità di massa) di transizione a una fase all'altra. \\
+  $v$ è il volume specifico delle due fasi $A$ e $B$. (il volume specifico è volume diviso massa, quindi l'inverso della densità volumica)
   \item Legge di Dalton: "In una miscela di gas la pressione totale \`e uguale alla somma delle pressioni parziali dei suoi gas componenti". $$P_{TOT} = \frac{RT}{V}\left( \sum_{i} n_i \right)$$
   \item Forza media che {\bf una} molecola esercita sul contenitore cubico di lato $L$: $\norm{\vec{F}} = \frac{mv^2}{L}$
   \item Forza totale esercitata dal gas: $\norm{\vec{F}} = \frac{1}{3}N \left(\frac{m \ang{v^2}}{L} \right)$, con $\ang{v^2}$ valor medio del quadrato della velocit\`a. $v_{qm} := (\ang{v^2})^{\frac{1}{2}}$ \`e la velocit\`a quadratica media.
