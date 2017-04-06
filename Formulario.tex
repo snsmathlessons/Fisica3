@@ -130,11 +130,11 @@ Enunciato secondo \textbf{Kelvin-Planck}: è impossibile costruire una macchina 
 
 Enunciato secondo \textbf{Clausius}: è impossibile costruire una macchina frigorifera che, operando in un ciclo, produca il solo effetto di trasferire calore da una sorgente a temperatura più bassa a una a temperature più alta.
 
-Enunciato secondo \textbf{Carnot}: L'efficiennza di un Ciclo di Carnot reversibile dipende solo dalle temperature delle due sorgenti tra cui opera. Un macchina di Carnot rappresenta una tra le macchine termiche più efficiente tra quelle operanti tra sorgenti a temperature fissate.
+Enunciato secondo \textbf{Carnot}: L'efficiennza di un Ciclo di Carnot reversibile dipende solo dalle temperature delle due sorgenti tra cui opera. Un macchina di Carnot rappresenta una tra le macchine termiche più efficiente tra quelle operanti tra sorgenti a temperature fissate. (A volte detto Teorema di Carnot)
 
 Enunciato secondo \textbf{Caratheodory}: Per ogni condizione iniziale $(p,V,T)$ e per ogni intorno (di $\bbR^3$) di questa condizione esiste un punto non raggiungibile dal punto iniziale tramite una trasformazione adiabatica reversibile. Questo è equivalente a $\delta Q= T dS$.
 
-Enunciato "moderno": In un sistema isolato vale $\frac{\de S}{\de t} \ge 0$, $t$ è il tempo.
+Enunciato "moderno": In un sistema isolato vale $\frac{\de S}{\de t} \ge 0$, $t$ è il tempo. Ovvero, per un sistema termicamente isolato l'entropia non può mai diminuire e resta costante se e solo se tutte le trasformazioni sono reversibili. Si ha quindi che per qualsiasi trasformazione vale $\Delta S\ge0$. (è conseguenza della diseguaglianza di Clausius)
 
 
 \textbf{Trasformazione termodinamica reversibile} \\
@@ -243,8 +243,8 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
   \item Entropia: $T \mbox{d}S = \mbox{d}U + p \mbox{d}V$, $\mbox{d}S = \left(\frac{\mbox{d}Q}{T}\right)_{\mbox{reversibile}}$
   \item Calore assorbito (per i gas): $\mbox{d}Q = n c_V \mbox{d}T$, con $c_V$ capacità termica molare a volume costante, anche detto calore molare a pressione costante. Attento che può dipendere dal libro.
   \item Energia libera (o potenziale di Helmholz): $F = U - TS$
-  \item Entalpia: $H = U + pV$, $\Delta H < 0$ per trasformazioni spontanee.
-  \item Energia libera di Gibbs: $G = H - TS$
+  \item Entalpia: $H = U + pV$.
+  \item Energia libera di Gibbs: $G = U + pV - TS=H-TS=F+pV$
   \end{itemize}
 
   \begin{itemize}
@@ -253,7 +253,11 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
   \item Irraggiamento: $\frac{\de E}{\de t} = \varepsilon \sigma A (\Delta T^4)$, $\varepsilon$ emissivit\`a, $\sigma$ costante di Stefan-Boltzmann.
   \end{itemize}
 
+\textbf{Potenziali termodinamici e condizioni di equilibrio} \\
+$\Delta F$, $\Delta H$, $\Delta H < 0$ per trasformazioni spontanee. DA FARE, vedi Picasso. \\
 
+\textbf{Significato microscopico dell'entropia} \\
+$S=k_B ln \Omega$. DA FARE, vedi Picasso. \\
 
 \textbf{Ciclo di Carnot} \\
 Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma. \\
@@ -280,10 +284,11 @@ Geometricamente ciò corrisponde a sezionare il ciclo con delle isoterme.
 Operativamente per calcolare il rendimento si calcola il calore netto $\delta Q(T)$ scambiato con ogni sorgente $T$. Definiamo poi $Q_{ass}=\sum_T \max\{ \delta Q(T), 0 \}$, in pratica sommiamo, sorgente per sorgente, solo i calori che entrano nella macchina.
 Il lavoro è l'area racchiusa dalla curva.
   
-  
+A seconda del verso di percorrenza un ciclo può essere una macchina termica o una macchina frigorifera (dal segno del lavoro $\Lusc$). Pompa di calore è un altro nome per macchina frigorifera.
   \begin{itemize}
   \item Rendimento di una macchina termica: $\eta = \frac{\Lusc}{Q_{ass}}$
-  \item Efficienza di un frigorifero: $\mbox{COP}=\epsilon = \frac{Q_{\mbox{tolto al frigo}}}{L}$
+  \item Efficienza di un macchina frigorifera: $\epsilon = \mbox{COP}_f= \frac{Q_{\mbox{tolto al frigo}}}{L}$
+  \item Efficienza di una pompa di calore: $\mbox{COP}_{pc}= \frac{Q_{\mbox{dato alla sorgente calda}}}{L}$ (stesso disegno di una macchina frigorifera)
   \end{itemize}
 
   \subsection*{``Approfondimento''}
