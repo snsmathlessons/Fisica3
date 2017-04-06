@@ -121,9 +121,34 @@ Vorremmo definire $C=\frac{\delta Q}{\partial T}$, ma questo dipende dalla trasf
 
 Queste formule sono utili quando ci viene data una qualsiasi equazione di stato e qualsiasi energia interna. Nel caso generale $C_V$ e $C_p$ possono non essere costanti, tipicamente dipendono dalla temperatura. Nel caso dei gas perfetti sono costanti.
 
-\begin{formula}[Secondo principio termodinamica]
+\textbf{Principio zero della termodinamica} \\
+Se $A$ è in equilibrio con $B$ e $B$ è in equilibrio con $C$ allora $A$ è in equilibrio con $C$.
+In cui con equilibrio termodinamico si intender equilibrio termico, meccanico, chimico, ecc.
+\textbf{Secondo principio termodinamica} \\
+Enunciato secondo \textbf{Kelvin-Planck}: è impossibile costruire una macchina termica che, operando in un ciclo, produca il solo effetto di convertire calore in un equivalente quantitativo di lavoro.
 
-\end{formula}
+Enunciato secondo \textbf{Clausius}: è impossibile costruire una macchina frigorifera che, operando in un ciclo, produca il solo effetto di trasferire calore da una sorgente a temperatura più bassa a una a temperature più alta.
+
+Enunciato secondo \textbf{Carnot}: L'efficiennza di un Ciclo di Carnot reversibile dipende solo dalle temperature delle due sorgenti tra cui opera. Un macchina di Carnot rappresenta una tra le macchine termiche più efficiente tra quelle operanti tra sorgenti a temperature fissate.
+
+Enunciato secondo \textbf{Caratheodory}: 
+
+\textbf{Tipi di cicli}
+Ciclo di \textbf{Otto, }:
+Ciclo \textbf{Diesel}:
+Ciclo di \textbf{Carnot}:
+
+\textbf{Trasformazione termodinamica reversibile} \\
+Una trasformazione termodinamica reversibile è una successione di trasformazioni infinitesime che passa istante per istante per degli stati di equilibrio e tale che esiste una trasformazione che riporta il sistema e anche l'esterno nello stato iniziale.
+In pratica si può disegnare sul piano $(V,p)$.
+
+\textbf{Entropia} \\
+Come conseguenza del secondo principio si ha che $$ _R \oint \frac{\delta Q}{T}=0$$. \\
+In cui con la $R$ si intende che l'integrale è calcolato lungo una trasformazione reversibile, ovvero lungo un cammino sul piano $(V,p)$.
+Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di stati $A$ e $B$ valga $$S(B)-S(A)= _R \int_{A\rightarrow B} \frac{\delta Q}{T}$$
+
+
+
 
 
   \begin{formula}[Energia Interna per i gas perfetti]
@@ -188,8 +213,8 @@ Queste formule sono utili quando ci viene data una qualsiasi equazione di stato 
   \textbf{ Espansione libera} \\
   In generale vale $$\delta Q=0, \delta L=0 \Rightarrow U=cost$$
   Nel caso dei gas perfetti, per definizione, vale $\de T=0$, cioè la temperatura, e quindi l'energia interna, non cambia.
-  $\Delta U=0$.
-  Prendendo un'isoterma che passa per il punto iniziale e finale si calcola che $\Delta S = nR \log \left( \frac{V_2}{V_1} \right) $
+  $\Delta U=0$. \\
+  Per calcolare la variazione di entropia non posso usare la formula $\int_{A\rightarrow B} \frac{\delta Q}{T}$ calcolata lungo l'espansione libera (infatti l'integrale fa $0$, poiché $\de Q=0$) poiché non è reversibile. Prendo quindi un'isoterma (reversibile!) che passa per il punto iniziale e finale si calcola che $\Delta S = nR \log \left( \frac{V_2}{V_1} \right)$
 
 
   \begin{formula}[Relazioni sui differenziali, gas perfetto]
@@ -226,12 +251,21 @@ Queste formule sono utili quando ci viene data una qualsiasi equazione di stato 
   \item Irraggiamento: $\frac{\de E}{\de t} = \varepsilon \sigma A (\Delta T^4)$, $\varepsilon$ emissivit\`a, $\sigma$ costante di Stefan-Boltzmann.
   \end{itemize}
 
-  \subsection*{Ciclo di Carnot}
-  Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma
+
+
+\textbf{Ciclo di Carnot} \\
+Compressione Adiabatica, Espansione Isoterma, Espansione Adiabatica, Compressione Isoterma
+
+\textbf{Ciclo di Stirling} \\
+bla bla
+
+\textbf{Rendimento di un ciclo} \\
+Il rendimento si calcola di un ciclo che effettua degli scambi di calore tra due sorgenti, per esempio per un ciclo di Carnot o un ciclo Stirling.
+Inserire i due disegni. 
   
   \begin{itemize}
-  \item Rendimento di un ciclo: $\eta = \frac{\Lusc}{Q_{ass}}$
-  \item Coefficiente di effetto frigogeno: $\mbox{COP} = \frac{Q_{\mbox{tolto al frigo}}}{L}$
+  \item Rendimento di una macchina termica: $\eta = \frac{\Lusc}{Q_{ass}}$
+  \item Efficienza di un frigorifero: $\mbox{COP}=\epsilon = \frac{Q_{\mbox{tolto al frigo}}}{L}$
   \end{itemize}
 
   \subsection*{``Approfondimento''}
