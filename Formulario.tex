@@ -30,7 +30,6 @@
 \begin{document}
 \maketitle
 
-\begin{multicols}{2}
   {\bf Disclaimer}: In classe pare usi $L_\text{entrante}=L$: è positivo se comprimo il gas.
   A volte compare $L_{uscente}=\Lusc=-L$.
   
@@ -53,6 +52,9 @@
     $C_P$         & calore molare a pressione costante &                                        \\
   \end{tabular}
 
+{\vskip 4em}
+  
+\begin{multicols}{2}
   \begin{formula}[Conversioni di unità di misure]
     1 \bar = 100 000 \Pa     \\
     1 \atm = 1,013 \bar      \\
@@ -147,7 +149,6 @@ Esiste una trasformazione quasi-statica ma non reversibile.
 Come conseguenza del secondo principio si ha che $$ _{_{_R}} \oint \frac{\delta Q}{T}=0$$. \\
 In cui con la $R$ si intende che l'integrale è calcolato lungo una trasformazione reversibile, ovvero lungo un cammino sul piano $(V,p)$.
 Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di stati $A$ e $B$ valga $$S(B)-S(A)= _{_{_R}}\int_{A\rightarrow B}  \frac{\delta Q}{T}$$
-
 
 
 
@@ -304,9 +305,12 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
 
   \section{Onde}
   \subsection*{Generalitate}
-  \begin{tabular}{lr}
-    Equazione d'onda & $\partial_{xx} \Psi + \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
-                     & $\omega^2 = c^2 k^2$                                        \\
+  \begin{tabular}{lc}
+    Equazione d'onda         & $\partial_{xx} \Psi + \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
+    Relazione di dispersione & $\omega^2 = c^2 k^2$                                        \\
+    Numero d'onda            & $k$                                                         \\
+    Lunghezza d'onda         & $\lambda = \frac{2 \pi}{k}$                                 \\
+    Intensità dell'onda      & $I = \abs{A}^2$                                             \\
   \end{tabular}
   
   \subsection*{Riflessione dell'onda}
@@ -339,6 +343,25 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   Imponendo il raccordo $\cC^1$ con $\partial_x \Psi_1(0, t) = \partial_x \Psi_2(0, t)$ si ottiene $k A_1 + k_R A_R = k_T A_T$.
 
   e quindi risolvendo $A_T = \frac{2 c_2}{c_1 + c_2} A_1$, $A_R = \frac{c_2 - c_1}{c_1 + c_2} A_1$.                      
+
+  \subsection*{Interferenza tra due sorgenti}
+  \begin{center}
+    \includegraphics[width=0.65\linewidth]{interferenza-sorgenti}
+  \end{center}
+
+  \begin{paragrafo}[Problema dell'interferenza]
+    Abbiamo due sorgenti uguali (stesso $\omega$ e stesso $k$) che emettono onde sferiche monocromatiche (in notazione complessa $\frac{e^{-i\omega t - ikr}}{r}$, dove $r$ è la distanza dalla sorgente). Ci mettiamo in un punto $P$ e calcoliamo l'intensità con cui le onde arrivano in $P$.
+  \end{paragrafo}
+
+  Allora se scriviamo l'onda che arriva nel punto $P$ da ciascuna sorgente $\Psi_i = \Psi_0 \frac{\cos(k r_i - \omega t)}{r_i}$ per $i = 1, 2$, possiamo calcolare l'intensità dell'onda e si ha che
+  $$ I = \frac{\Psi_0^2}{r_1^2} + \frac{\Psi_0^2}{r_2^2} + 2 \frac{\Psi_0^2}{r_1 r_2} \cos \delta $$
+  dove $\delta = k (r_2 - r_1)$
+
+  Inoltre, se $\cos \delta = 1$ diciamo che nel punto si ha interferenza {\it costruttiva}, se $\cos \delta = -1$ diciamo che nel punto si ha interferenza {\it distruttiva}.
+
+  {\bf Approssimazione a grande distanza}
+  Supponiamo che $r_1 \approx r_2 = r$ e che $r >> d$ (con $d$ indichiamo la distanza tra le due sorgenti). Indichiamo inoltre con $\theta$ l'angolo tra il punto $P$ e la retta dei punti equidistanti dalle due sorgenti. Allora si ha che $r_2 - r_1 \approx d \sin\theta$ e la formula dell'intensità si esprime come
+  $$ I = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrb{\frac{\delta}{2}} = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrb{\frac{\pi d}{\lambda} \sin\theta} $$
 
 \end{multicols}
 \end{document}
