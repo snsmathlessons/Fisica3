@@ -11,3 +11,6 @@
 *.fls
 *.dvi
 *.ps
+*.gz
+*.tar
+*.bz2

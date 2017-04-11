@@ -5,6 +5,7 @@
 \usepackage[a4paper,twoside,top=0.5in,bottom=0.5in,left=0.5in,right=0.5in]{geometry}
 \usepackage{float}
 \usepackage{graphicx}
+\graphicspath{{./images/}}
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{hyperref}
@@ -56,6 +57,12 @@
       \end{array}
     \right.
   \end{displaymath}
+}
+
+\newenvironment{paragrafo}[1][]{%
+  {\vskip 1em}
+  {\bf {#1}}
+}{%
 }
 
 \newenvironment{formula}[1][]{%

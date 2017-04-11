@@ -302,6 +302,44 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \item $P = \frac{\norm{\vec{F_{TOT}}}}{L^2} = \frac{2}{3} N \left(\frac{1}{2}m {v_{qm}^{2}} \right) \frac{1}{V} = \frac{2}{3} N \ang{E_{cin}}$, $\ang{E_{cin}} = \frac{l}{2}K_BT = \frac{1}{2}m{v_{qm}^\frac{1}{2}}$, $l$ gradi di libert\`a.
   \end{itemize}
 
+  \section{Onde}
+  \subsection*{Generalitate}
+  \begin{tabular}{lr}
+    Equazione d'onda & $\partial_{xx} \Psi + \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
+                     & $\omega^2 = c^2 k^2$                                        \\
+  \end{tabular}
+  
+  \subsection*{Riflessione dell'onda}
+  \begin{center}
+    \includegraphics[width=0.65\linewidth]{riflessione-onde}
+  \end{center}
+  
+  \begin{paragrafo}[Problema della Riflessione]
+    Ci viene data un'onda monocromatica della forma $A_1 e^{i(kx - \omega t)}$ in un mezzo con velocità della luce $c_1$, e ci viene chiesto di dire chi è l'onda trasmessa nel mezzo con velocità della luce $c_2$ e quella riflessa nel mezzo di partenza.
+
+    I pedici nel seguito sono $1$ per l'onda nota, $T$ per l'onda trasmessa e $R$ per l'onda riflessa.
+  \end{paragrafo}
+  
+  $$ \Psi(x, t) = \left\{
+    \begin{array}{lr}
+      \Psi_1(x, t) & x < 0 \\
+      \Psi_2(x, t) & x > 0 \\
+    \end{array}
+  \right. $$
+
+  \begin{tabular}{lcl}
+    $\Psi_1(x, t)$ & = & $A_1 e^{i(kx - \omega t)} + A_R e^{i(k_R x - \omega t)}$ \\
+    $\Psi_2(x, t)$ & = & $A_T e^{i(k_T x - \omega t)}$                            \\
+  \end{tabular}
+
+  dove vale che $c_2^2 k_T^2 = \omega^2 = c_1^2 k^2 = c_1^2 k_R^2$ e quindi abbiamo le relazioni $k_R = - k$ (perché è riflessa), $k_T = \frac{c_1}{c_2} k$.
+
+  Imponendo il raccordo $\cC^0$ con $\Psi_1(0, t) = \Psi_2(0, t)$ si ottiene $A_1 + A_R = A_T$.
+  
+  Imponendo il raccordo $\cC^1$ con $\partial_x \Psi_1(0, t) = \partial_x \Psi_2(0, t)$ si ottiene $k A_1 + k_R A_R = k_T A_T$.
+
+  e quindi risolvendo $A_T = \frac{2 c_2}{c_1 + c_2} A_1$, $A_R = \frac{c_2 - c_1}{c_1 + c_2} A_1$.                      
+
 \end{multicols}
 \end{document}
 
