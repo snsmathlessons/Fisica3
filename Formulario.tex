@@ -237,7 +237,7 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
 
 
 
-  {\bf Fatti generici}
+  {\bf Fatti casuali}
   \begin{itemize}
   \item Entropia per i Gas Perfetti: $S = nc_V \log T + nR \log \frac{V}{n}$
   \item Calore assorbito (per i non-gas): $\mbox{d}Q = c m \mbox{d}T$, con $c$ calore specifico del corpo.
@@ -256,6 +256,8 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
 
 \textbf{Potenziali termodinamici e condizioni di equilibrio} \\
 $\Delta F$, $\Delta H$, $\Delta H < 0$ per trasformazioni spontanee. DA FARE, vedi Picasso. \\
+
+Su una trasformazione reversibile vale che $\de F = - p \de V - S \de T$ e quindi se riusciamo ad esprimere $F$ come funzione della coppia $(V, T)$, si ottiene $p = - \lrb{\dpar{F}{V}}_T$ (a temperatura costante) e anche $S = - \lrb{\dpar{F}{T}}_V$.
 
 \textbf{Significato microscopico dell'entropia} \\
 $S=k_B ln \Omega$. DA FARE, vedi Picasso. \\
@@ -306,12 +308,22 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \section{Onde}
   \subsection*{Generalitate}
   \begin{tabular}{lc}
-    Equazione d'onda         & $\partial_{xx} \Psi + \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
+    Equazione d'onda         & $\partial_{xx} \Psi - \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
     Relazione di dispersione & $\omega^2 = c^2 k^2$                                        \\
     Numero d'onda            & $k$                                                         \\
-    Lunghezza d'onda         & $\lambda = \frac{2 \pi}{k}$                                 \\
+    Periodo dell'onda        & $T = \frac{2 \pi}{\omega}$                                  \\
+    Pulsazione               & $\omega = 2 \pi f$                                          \\
+    Lunghezza d'onda         & $\lambda = \frac{2 \pi}{k} = cT$                            \\
     Intensità dell'onda      & $I = \abs{A}^2$                                             \\
   \end{tabular}
+
+  \begin{paragrafo}[Forma delle onde]
+    Tutte le soluzioni dell'equazione d'onda (anche detta equazione di D'Alambert) sono della forma $\Psi(x, t) = f_1(x - ct) + f_2(x + ct)$.
+
+    Inoltre se cerchiamo di risolvere l'equazione tridimensionale $c^2 \nabla^2 \Psi = \frac{\partial^2 \Psi}{\partial t^2}$ le soluzioni saranno della forma $\Psi(x, y, z, t) = f_1(\alpha x + \beta y + \gamma z + ct) + f_1(\alpha x + \beta y + \gamma z - ct)$ con $\alpha^2 + \beta^2 + \gamma^2 = 1$
+
+    L'analoga formula per le onde invarianti per rotazioni è $\Psi(r, t) = \frac{f_1(r - ct) + f_2(r + ct)}{r}$.
+  \end{paragrafo}
   
   \subsection*{Riflessione dell'onda}
   \begin{center}
