@@ -257,7 +257,7 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
 \textbf{Potenziali termodinamici e condizioni di equilibrio} \\
 $\Delta F$, $\Delta H$, $\Delta H < 0$ per trasformazioni spontanee. DA FARE, vedi Picasso. \\
 
-Su una trasformazione reversibile vale che $\de F = - p \de V - S \de T$ e quindi se riusciamo ad esprimere $F$ come funzione della coppia $(V, T)$, si ottiene $p = - \lrb{\dpar{F}{V}}_T$ (a temperatura costante) e anche $S = - \lrb{\dpar{F}{T}}_V$.
+Su una trasformazione reversibile vale che $\de F = - p \de V - S \de T$ e quindi se riusciamo ad esprimere $F$ come funzione della coppia $(V, T)$, si ottiene $p = - \lrt{\dpar{F}{V}}_T$ (a temperatura costante) e anche $S = - \lrt{\dpar{F}{T}}_V$.
 
 \textbf{Significato microscopico dell'entropia} \\
 $S=k_B ln \Omega$. DA FARE, vedi Picasso. \\
@@ -305,6 +305,8 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \item $P = \frac{\norm{\vec{F_{TOT}}}}{L^2} = \frac{2}{3} N \left(\frac{1}{2}m {v_{qm}^{2}} \right) \frac{1}{V} = \frac{2}{3} N \ang{E_{cin}}$, $\ang{E_{cin}} = \frac{l}{2}K_BT = \frac{1}{2}m{v_{qm}^\frac{1}{2}}$, $l$ gradi di libert\`a.
   \end{itemize}
 
+  \clearpage
+  
   \section{Onde}
   \subsection*{Generalitate}
   \begin{tabular}{lc}
@@ -324,6 +326,40 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
 
     L'analoga formula per le onde invarianti per rotazioni è $\Psi(r, t) = \frac{f_1(r - ct) + f_2(r + ct)}{r}$.
   \end{paragrafo}
+
+  \subsection*{Formule di M. Complete}
+  \begin{equation*}
+    \div {\vec E} = \frac{\rho}{\epsilon_0}
+  \end{equation*}
+  \begin{equation*}
+    \div {\vec B} = 0
+  \end{equation*}
+  \begin{equation*}
+    \rot {\vec E} = - \dep{\vec B}{t}
+  \end{equation*}
+  \begin{equation*}
+    \rot {\vec B} = \epsilon_0 \mu_0 \dep{\vec E}{t} + \mu_0 \vec J
+  \end{equation*}
+
+  \subsection*{Potenziali e Gauge}
+  Si deve avere:
+  \begin{eqsystem}[c]
+    \vec E = - \grad V - \dep{\vec A}{t} \\
+    \vec B = \rot {\vec A} \\
+  \end{eqsystem}
+  
+  Nella Gauge di Lorentz, ovvero
+  $\div {\vec A} + \mu_0 \epsilon_0 \dep{V}{t} = 0$, si ha
+  \begin{eqsystem}[c]
+    - \nabla^2 V + \frac{1}{c^2} \dep{V}{t} = \frac{\rho}{\epsilon_0} \\
+    - \nabla^2 {\vec A} + \frac{1}{c^2} \dep{\vec A}{t} = \mu_0 \vec J \\
+  \end{eqsystem}
+
+  Inoltre esiste la Gauge di Coulomb $\div {\vec A} = 0$, nella quale si ottiene:
+  \begin{eqsystem}[c]
+    - \lapl V = \frac{\rho}{\epsilon_0} \\
+    - \lapl {\vec A} + \mu_0 \epsilon_0 \dpar{^2 {\vec A}}{t^2} = + \mu_0 {\vec J} - \mu_0 \epsilon_0 \grad \lrt{\dpar{V}{t}} \\
+  \end{eqsystem}
   
   \subsection*{Riflessione dell'onda}
   \begin{center}
@@ -373,7 +409,133 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
 
   {\bf Approssimazione a grande distanza}
   Supponiamo che $r_1 \approx r_2 = r$ e che $r >> d$ (con $d$ indichiamo la distanza tra le due sorgenti). Indichiamo inoltre con $\theta$ l'angolo tra il punto $P$ e la retta dei punti equidistanti dalle due sorgenti. Allora si ha che $r_2 - r_1 \approx d \sin\theta$ e la formula dell'intensità si esprime come
-  $$ I = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrb{\frac{\delta}{2}} = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrb{\frac{\pi d}{\lambda} \sin\theta} $$
+  $$ I = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\delta}{2}} = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\pi d}{\lambda} \sin\theta} $$
+
+  \begin{formula}[Equazioni nel vuoto]
+    \square = \nabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2}
+    \\ \text{Allora le equazioni nel vuoto diventano}
+    \square {\vec B} = 0, \hfill 1.5em \square {\vec E} = 0
+  \end{formula}
+
+  \subsection*{Formula Onda Piana nel vuoto, Polarizzazione lineare}
+  \begin{eqsystem}[rl]
+    \vec E = & \vec{E_0} \cos (\vec{k} \dotp \vec{r} - \omega t + \varphi_0) \\
+    \vec B = & \vec{B_0} \cos (\vec{K} \dotp \vec{r} - \omega t + \varphi_0) \\
+  \end{eqsystem}
+  con $\vec{B_0} = \frac{1}{c} \hat{k} \times \vec{E}$ e $\omega = ck$.
+
+  \subsection*{Formula Onda Piana nel vuoto, Polarizzazione circolare}
+  \begin{eqsystem}[rl]
+    \vec E = & (\vec{a_0} \pm i \hat{k} \times \vec{a_0}) e^{i (\vec{k} \dotp \vec{r} - \omega t + \varphi_0)}             \\
+    \vec B = & \frac{1}{c} (\hat{k} \times \vec{a_0} \mp i \vec{a_0}) e^{i (\vec{k} \dotp \vec{r} - \omega t + \varphi_0)} \\
+  \end{eqsystem}
+
+  \subsection*{Formula Onde Sferiche nel Vuoto}
+  \begin{eqsystem}[rl]
+    \vec E = & \frac{E_0}{r} e^{i ({\vec k} \dotp {\vec r} \pm \omega t + \varphi_0)} \hat{r} \\
+    \vec B = & \frac{B_0}{r} e^{i ({\vec k} \dotp {\vec r} \pm \omega t + \varphi_0)} \hat{r} \\
+  \end{eqsystem}
+    
+  Chiamiamo vettore di Poynting
+  $\vec{I} = \frac{1}{\mu_0} (\vec{E} \times \vec{B})$, siccome si ha,
+  fissato un volume $V$, e detta $\Sigma = \partial V$ il suo bordo:
+  $$\frac{\de}{\de t} \lrt{\int_{V_\epsilon} u_E + u_B} = -
+  \frac{1}{\mu_0} \int_\Sigma (\vec{E} \times \vec{B}) \dotp \de{\vec{s}}$$
+    
+  E la densità di quantità di moto $\vec P = \frac{1}{c} \vec S$. Densità di momento angolare $\vec{m_\Omega} = (\vec r - \vec \Omega) \times \vec{P}(\vec r)$
+  
+  \begin{paragrafo}[Riflessione di un onda]
+    $\vec E = \vec{E_+} + \vec{E_-}$ ed
+    anche $\vec B = \vec{B_+} + \vec{B_-}$, dove con il $+$ indichiamo i
+    campi incidenti e con il $-$ indichiamo i campi riflessi.
+    
+    % TODO: Da finire
+    
+    Ricordiamo che per le onde piane si ha $\vec{\nabla} = i \vec{k}$, ovvero $\rot (e^{\vec k \cdot \vec r} \vec u) = (i \vec{k} \times u) e^{\vec k \cdot \vec r}$ e simili.
+  \end{paragrafo}
+  
+  \begin{paragrafo}[Velocità della luce in un mezzo]
+    $v = \frac{c}{\sqrt{\epsilon_r \mu_r}}$ è la velocità della luce.
+    
+    Inoltre $n_r = \frac{v}{c}$ si dice indice di rifrazione
+  \end{paragrafo}
+  
+  \begin{paragrafo}[Onde incidenti, rifratte, riflesse]
+    \begin{center}
+      \includegraphics[width=0.95\linewidth]{onde-riflesse-rifratte}
+    \end{center}
+    
+    Imponendo la continuità dei campi nei materiali si ottiene $\omega =
+    \omega' = \omega''$, $\alpha = \alpha'$, ovvero che l'angolo di
+    riflessione è uguale all'angolo di incidenza.
+    
+    Inoltre per la relazione di snell
+    $n_2 \sin \alpha'' = n_1 \sin \alpha$
+    
+    Se la polarizzazione è ortogonale sia a $\hat{k}$ sia a $\hat{n}$,
+    vale che
+    \begin{displaymath}
+      \begin{array}{c}
+        E_0' = \frac{n_1 \cos \alpha - n_2 \cos \alpha'}{n_1 \cos \alpha + n_2 \cos \alpha''} \\
+        E_0'' = E_0 \frac{2 n_1 \cos \alpha}{n_1 \cos \alpha + n_2 \cos \alpha'}              \\
+      \end{array}
+    \end{displaymath}
+  \end{paragrafo}
+  
+  \begin{paragrafo}[Potenziali ritardati]
+    \begin{eqsystem}[rl]
+      V =       & \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r}', t - \frac{\abs{\vec{r} - \vec{r}'}}{c})}{\abs{\vec{r} - \vec{r}'}} \de^3 r' \\
+      \vec{A} = & \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{r}', t - \frac{\abs{\vec{r} - \vec{r}'}}{c})}{\abs{\vec{r} - \vec{r}'}} \de^3 r'     \\
+    \end{eqsystem}
+    Ed è soddisfatta la Gauge di Lorentz: $\div {\vec A} + \frac{1}{c^2}
+    \frac{\partial^2 V}{\partial t^2} = 0$.
+  \end{paragrafo}
+
+  \subsection*{Principia Relativitatis}
+  Postulati della teoria della Relatività Ristretta (o Speciale)
+  \begin{itemize}
+  \item La leggi della meccanica, dell'elettromagnetismo e dell'ottica sono le stesse in tutti i sistemi di riferimento inerziali
+  \item La luce si propaga nel vuoto a velocità costante $c$ indipendentemente dallo stato di moto della sorgente e dell'osservatore
+  \end{itemize}
+
+  \subsection*{Formule per $\beta$ e $\gamma$}
+  $\vec \beta = \frac{\vec v}{c}$, $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$
+
+  Vale quindi $\beta^2 \gamma^2 = \gamma^2 - 1$.
+
+  Vogliamo dare una ``distanza'' tra due eventi nello spazio quadridimensionale,  $A = (c t_1, x_1, y_1, z_1)$, $B = (c t_2, x_2, y_2, z_2)$.
+  \begin{formula}[Intervallo Invariante]
+    S(A, B)^2 = (c t_1 - c t_2)^2 - (x_1 - x_2)^2 - (y_1 - y_2)^2 - (z_1 - z_2)^2
+  \end{formula}
+
+  \subsection*{Boost generico}
+  Nel caso in cui la velocità di $\Sigma'$ scritta rispetto alle coordinate di $\Sigma$ sia $v = (v_x, v_y, v_z)$, la matrice con cui cambiano le coordinate è
+  \begin{displaymath}
+    \lrt{
+      \begin{array}{cccc}
+        \gamma & - \gamma \beta_x & - \gamma \beta_y & - \gamma \beta_z \\
+        - \gamma \beta_x & 1 + (\gamma - 1) \frac{\beta_x^2}{\beta^2} & (\gamma - 1) \frac{\beta_x \beta_y}{\beta^2} & (\gamma - 1) \frac{\beta_x \beta_z}{\beta^2} \\
+        - \gamma \beta_y & (\gamma - 1) \frac{\beta_y \beta_x}{\beta^2} & 1 + (\gamma - 1) \frac{\beta_y^2}{\beta^2} & (\gamma - 1) \frac{\beta_y \beta_z}{\beta^2} \\
+        - \gamma \beta_z & (\gamma - 1) \frac{\beta_z \beta_x}{\beta^2} & (\gamma - 1) \frac{\beta_z \beta_y}{\beta^2} & 1 + (\gamma - 1) \frac{\beta_z^2}{\beta^2} \\
+      \end{array}
+    }
+  \end{displaymath}
+  con $(\beta_x, \beta_y, \beta_z) = \frac{1}{c} (v_x, v_y, v_z)$, di modulo $\beta$.
+  
+  \subsection*{Boost lungo $\hat{x}$}
+  \begin{displaymath}
+    \lrt{\begin{array}{c} ct' \\ x' \\ y' \\ z' \\ \end{array}} =
+    \lrt{
+      \begin{array}{cccc}
+        \gamma & - \beta \gamma & 0 & 0 \\
+        - \beta \gamma & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
+      \end{array}
+    } \cdot
+    \lrt{\begin{array}{c} ct \\ x \\ y \\ z \\ \end{array}}
+  \end{displaymath}
+  dove $\beta = \frac{v_x}{c}$ e $(v_x, 0, 0)$ è la velocità del sistema $\Sigma'$ scritta nelle coordinate del sistema $\Sigma$.
 
 \end{multicols}
 \end{document}
