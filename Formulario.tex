@@ -412,9 +412,9 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   $$ I = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\delta}{2}} = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\pi d}{\lambda} \sin\theta} $$
 
   \begin{formula}[Equazioni nel vuoto]
-    \square = \nabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2}
-    \\ \text{Allora le equazioni nel vuoto diventano}
-    \square {\vec B} = 0, \hfill 1.5em \square {\vec E} = 0
+    \square = \nabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \\
+    \text{Allora le equazioni nel vuoto diventano} \\
+    \square {\vec B} = 0, \hskip 1.5em \square {\vec E} = 0
   \end{formula}
 
   \subsection*{Formula Onda Piana nel vuoto, Polarizzazione lineare}
@@ -498,10 +498,15 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \item La luce si propaga nel vuoto a velocità costante $c$ indipendentemente dallo stato di moto della sorgente e dell'osservatore
   \end{itemize}
 
-  \subsection*{Formule per $\beta$ e $\gamma$}
-  $\vec \beta = \frac{\vec v}{c}$, $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$
+  \subsection*{Velocità e Lunghezza}
+  Un evento è identificato da quattro coordinate $(t, x, y, z)$.
 
-  Vale quindi $\beta^2 \gamma^2 = \gamma^2 - 1$.
+  La distanza ``lungo x'' $L_x$ tra due eventi $(t, x_1, y_1, z_1)$ e $(t, x_2, y_2, z_2)$, simultanei in un dato sistema di riferimento $\Sigma$, è definita come $\abs{x_1 - x_2}$. La lunghezza ``lungo x'' di un oggetto unidimensionale è la distanza ``lungo x'' tra i due estremi.
+
+  \subsection*{Rapidità}
+  
+  \subsection*{Formule per $\beta$ e $\gamma$}
+  $\vec \beta = \frac{\vec v}{c}$, $\gamma = \frac{1}{\sqrt{1 - \beta^2}}$. Vale quindi $\beta^2 \gamma^2 = \gamma^2 - 1$. Inoltre $\gamma > 1$ e $\beta < 1$ sempre.
 
   Vogliamo dare una ``distanza'' tra due eventi nello spazio quadridimensionale,  $A = (c t_1, x_1, y_1, z_1)$, $B = (c t_2, x_2, y_2, z_2)$.
   \begin{formula}[Intervallo Invariante]
@@ -537,6 +542,79 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \end{displaymath}
   dove $\beta = \frac{v_x}{c}$ e $(v_x, 0, 0)$ è la velocità del sistema $\Sigma'$ scritta nelle coordinate del sistema $\Sigma$.
 
+  \subsection*{Contrazione delle lunghezze}
+  Prendiamo un corpo in moto, nel nostro sistema di riferimento $\Sigma_\text{lab}$, con velocità $(v_x, 0, 0)$ costante. Esiste un sistema di riferimento, detto proprio, in cui l'oggetto ha velocità nulla (è il sistema di riferimento che va a velocità $(-v_x, 0, 0)$ misurata nel sistema $\Sigma_\text{lab}$).
+  $$ L_{x,\text{osservata}} = \frac{L_{x, \text{propria}}}{\gamma(v_\text{osservata})} $$
+  dove le $L_x$ indicano solo la lunghezza lungo $\hat{x}$.
+  
+  \subsection*{Dilatazione dei tempi}
+  Supponiamo di avere due eventi che in un sistema di riferimento $\Sigma$ hanno uguali coordinate spaziali.
+  $$ \Delta T_\text{osservato} = \Delta T_\text{proprio} \cdot \gamma(v_\text{osservata}) $$
+
+  \subsection*{Quadricose}
+  In un sistema di riferimento fissato, definiamo le seguenti quantità:
+  \begin{displaymath}
+    \begin{array}{c}
+      X = (ct, x, y, z)                                                             \\
+      \de t = \gamma \de \tau                                                       \\
+      U = \ded{X}{\tau}                                                     \\
+      U = \gamma (c, v_x, v_y, v_z)                                                 \\
+      P = m U = m \gamma (c, v_x, v_y, v_z) = (\frac{E}{c}, p_x, p_y, p_z)          \\
+      F = \ded{P}{\tau} = \gamma (\frac{1}{c} \vec{f} \dotp \vec{v}, f_x, f_y, f_z) \\
+    \end{array}
+  \end{displaymath}
+  dove $\vec{f}$ è la forza classica e $\vec{v}$ è la velocità classica.
+
+  Tutte le quantità definite sopra sono quadrivettori, ovvero trasformano con le matrici di Lorentz per cambi di sistema di riferimento.
+
+  In particolare la quadrinorma di $P$ è costante in tutti i sistemi di riferimento inerziali e vale $\norm{P}^2 = m^2 c^2$, ovvero vale $\frac{E^2}{c^2} - {\vec p} \dotp {\vec p} = m^2 c^2$, dove $\vec p = (p_x, p_y, p_z)$.
+
+  \subsection*{Urti}
+  In una interazione tra $n$ particelle con quadrivettori energia-impulso $P_1, \ldots, P_n$, il cui risultato sono $m$ particelle con quadrivettori $Q_1, \ldots, Q_m$ vale l'uguaglianza $\sum_i P_i = \sum_j Q_j$ (come quadrivettori).
+
+  \subsection*{Particelle a massa nulla}
+  Il quadrivettore impulso per un'onda elettromagnetica (fotone) si scrive $P = \hbar (\frac{\omega}{c}, k_x, k_y, k_z)$.
+  Il fatto che la massa sia nulla è equivalente alla relazione $c^2 \, \vec{k} \dotp \vec{k} = \omega^2$.
+  Essendo un quadrivettore possiamo dedurre come cambia la frequenza di un'onda elettromagnetica per cambi di sistema di riferimento.
+
+  \subsection*{Cambio di Campi}
+  Per un boost lungo $\hat x$ i campi elettrico e magnetico cambiano come:
+  \begin{displaymath}
+    \begin{array}{cc}
+      E_x' = E_x & B_x' = B_x \\
+      E_y' = \gamma (E_y - \beta c B_z) & B_y' = \gamma (B_y + \beta \frac{E_z}{c}) \\
+      E_z' = \gamma (E_z + \beta c B_y) & B_z' = \gamma (B_z - \beta \frac{E_y}{c}) \\
+    \end{array}
+  \end{displaymath}
+
+  In generale, per un boost lungo $\vec \beta$ si hanno le formule:
+  \begin{displaymath}
+    \begin{array}{c}
+      \vec{E'} = \gamma (\vec E + c \vec \beta \times \vec B) - \frac{\gamma^2}{\gamma + 1} \vec \beta (\vec \beta \dotp \vec E) \\
+      \vec{B'} = \gamma (\vec B - \frac{1}{c} \vec \beta \times \vec E) - \frac{\gamma^2}{\gamma + 1} \vec \beta (\vec \beta \dotp \vec B) \\
+    \end{array}
+  \end{displaymath}
+
+  Comunque sia le quantità $B^2 - \frac{E^2}{c^2}$ e $\vec B \dotp \vec E$ sono invarianti per cambio di sistema di riferimento.
+
+  \subsection*{Effetto Doppler Relativistico}
+  Sia $\nu_s$ la frequenza della sorgente (nel sistema di riferimento dell'osservatore) e $\nu_o$ la frequenza osservata
+
+  \subsubsection*{Effetto Doppler Parallelo}
+  $$ \nu_o = \sqrt{\frac{1 - \beta}{1 + \beta}} \nu_s $$
+  Per essere sicuri del segno di $\beta$, ricordare che se la sorgente si avvicina all'osservatore, la frequenza osservata è maggiore di quella emessa.
+  
+  \subsubsection*{Effetto Doppler Trasverso}
+  Qualora la congiungente tra l'osservatore e la sorgente (detta direzione di osservazione) sia ortogonale alla velocità della sorgente, vale la formula
+  $$ \nu_o = \frac{1}{\gamma} \nu_s $$
+
+  Nel caso generale, detto $\theta$ l'angolo tra la direzione di osservazione e la velocità della sorgente, si ha
+  $$ \nu_o = \frac{\nu_s}{\gamma (1 + \frac{v}{c} \cos\theta)} $$
+
+  \begin{center}
+    \includegraphics[width=0.85\linewidth]{osservatore-sorgente}
+  \end{center}
+  
 \end{multicols}
 \end{document}
 
