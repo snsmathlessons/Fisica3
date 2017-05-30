@@ -102,7 +102,6 @@ In generale, nel calcolare la quantità $\frac{\partial x}{\partial y}$ supporre
  L=\int^{p_2}_{p_1} \kappa V p \de p \cong \frac{\kappa V}{2} (p_2^2 -p_1^2)
 \end{formula}
   
-  
   \begin{formula}[Primo principio della Termodinamica]
   \text{rappresenta la conservazione dell'energia}\\
   \text{definisco il calore in questo modo} \\
@@ -138,7 +137,6 @@ Enunciato secondo \textbf{Caratheodory}: Per ogni condizione iniziale $(p,V,T)$ 
 
 Enunciato "moderno": In un sistema isolato vale $\frac{\de S}{\de t} \ge 0$, $t$ è il tempo. Ovvero, per un sistema termicamente isolato l'entropia non può mai diminuire e resta costante se e solo se tutte le trasformazioni sono reversibili. Si ha quindi che per qualsiasi trasformazione vale $\Delta S\ge0$. (è conseguenza della diseguaglianza di Clausius)
 
-
 \textbf{Trasformazione termodinamica reversibile} \\
 Una trasformazione termodinamica reversibile è una successione di trasformazioni infinitesime che passa istante per istante per degli stati di equilibrio e tale che la trasformazione inversa riporti il sistema e anche l'esterno nello stato iniziale.
 In pratica si può disegnare sul piano $(V,p)$.
@@ -149,9 +147,6 @@ Esiste una trasformazione quasi-statica ma non reversibile.
 Come conseguenza del secondo principio si ha che $$ _{_{_R}} \oint \frac{\delta Q}{T}=0$$. \\
 In cui con la $R$ si intende che l'integrale è calcolato lungo una trasformazione reversibile, ovvero lungo un cammino sul piano $(V,p)$.
 Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di stati $A$ e $B$ valga $$S(B)-S(A)= _{_{_R}}\int_{A\rightarrow B}  \frac{\delta Q}{T}$$
-
-
-
 
   \begin{formula}[Energia Interna per i gas perfetti]
     U = \frac{\ell}{2}nRT = n c_V T=C_V T
@@ -212,13 +207,11 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
     \text{l'entropia non varia, verificare}
   \end{formula}
   
- 
   \textbf{ Espansione libera} \\
   In generale vale $$\delta Q=0, \delta L=0 \Rightarrow U=cost$$
   Nel caso dei gas perfetti, per definizione, vale $\de T=0$, cioè la temperatura, e quindi l'energia interna, non cambia.
   $\Delta U=0$. \\
   Per calcolare la variazione di entropia non posso usare la formula $\int_{A\rightarrow B} \frac{\delta Q}{T}$ calcolata lungo l'espansione libera (infatti l'integrale fa $0$, poiché $\de Q=0$) poiché non è reversibile. Prendo quindi un'isoterma (reversibile!) che passa per il punto iniziale e finale si calcola che $\Delta S = nR \log \left( \frac{V_2}{V_1} \right)$
-
 
   \begin{formula}[Relazioni sui differenziali, gas perfetto]
     \de{U} + \delta \Lusc = \delta{Q}                                   \\
@@ -234,8 +227,6 @@ Quindi si può definire una funzione di stato $S$ tale che per ogni coppia di st
   \begin{formula}[Legge di Van der Waals]
     (p+a\frac{n^2}{V^2})(V-nb) = nRT
   \end{formula}
-
-
 
   {\bf Fatti casuali}
   \begin{itemize}
@@ -785,7 +776,8 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   
   \subsection*{Indeterminazione di Heisenberg}
   In modi che non ci interessano troppo si ottiene $\sigma_x \sigma_p \ge \frac{\hbar}{2}$ (dove $\sigma$ sono le varianze rispettivamente della posizione e della quantità di moto, indicate anche con il nome di incertezze). Queste disuguaglianze così libere valgono per uno stato (funzione d'onda) fissato e dipendono dal fatto che $[x, p] \neq 0$.
-  
+
+  Ricordiamo inoltre che se conosciamo lo stato $\Psi$ possiamo calcolare $\sigma_x$ come $\langle x^2 \rangle - {\langle x \rangle}^2$.  
 \end{multicols}
 \end{document}
 
