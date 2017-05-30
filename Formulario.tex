@@ -561,9 +561,12 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
       U^\mu = \gamma (c, v_x, v_y, v_z) \\
       P^\mu = m U^\mu = m \gamma (c, v_x, v_y, v_z) = (\frac{E}{c}, p_x, p_y, p_z) \\
       F^\mu = \ded{P^\mu}{\tau} = \gamma (\frac{1}{c} \vec{f} \dotp \vec{v}, f_x, f_y, f_z) \\
+      A^\mu = \ded{U^\mu}{\tau} = (\gamma^4 \, \frac{\vec a \dotp \vec v}{c}, \gamma^2 \vec a + \gamma^4 \frac{\vec a \dotp \vec v}{c^2} \vec v) \\
+      F^\mu = m A^\mu \\
+      U^\mu A_\mu = 0 \\
     \end{array}
   \end{displaymath}
-  dove $\vec{f}$ è la forza classica e $\vec{v}$ è la velocità classica. Come caso particolare, posto $\vec p = m \gamma(v) \vec v$, vale l'equazione $\ded{\vec p}{t} = \vec f$. 
+  dove $\vec{f}$ è la forza classica, $\vec{v}$ è la velocità classica e $\vec a$ è l'accelerazione classica. Come caso particolare, posto $\vec p = m \gamma(v) \vec v$, vale l'equazione $\ded{\vec p}{t} = \vec f$. 
 
   Tutte le quantità definite sopra sono quadrivettori, ovvero trasformano con le matrici di Lorentz per cambi di sistema di riferimento.
 
@@ -628,6 +631,10 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
     \end{array}
   \end{displaymath}
 
+  \subsubsection*{Triaccelerazioni e cambi di sistema}
+  Con le stesse notazioni di sopra, date $\vec v = (v_x, 0, 0)$, $\vec u = (u_x, 0, 0)$ e $\vec a = (a_x, 0, 0)$ accelerazione classica del corpo nel sistema $\Sigma$, si ha:
+  $$ a_x' = \frac{a_x}{\gamma(v_x)^3 \, \lrt{1 - \frac{u_x v_x}{c^2}}^3} $$
+  
   \subsection*{Calcolo del Tempo proprio}
   Supponiamo in un dato sistema di riferimento di osservare un corpo muoversi secondo una legge oraria $\vec X(t)$ con velocità $v(t)$ per $t \in [0, T]$, dove $X$ e $t$ sono le coordinate nel sistema di riferimento dell'osservatore. Allora il tempo proprio trascorso, ovvero il tempo trascorso percepito dall'oggetto, risulta essere
   $$ \tau (T) = \int_0^T \frac{\de t}{\gamma(v(t))} $$
@@ -663,6 +670,7 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   $$ x(t) = \frac{c^2 m}{f} \lrt{\sqrt{1 + \lrt{\frac{ft}{mc}}^2} - 1} $$
   per curiosità
   $$ a(t) = \frac{f}{m \lrt{1 + \lrt{\frac{ft}{mc}}^2}^{\frac{3}{2}}} $$
+  $$ \tau(t) = \frac{mc}{f} \cdot \text{settsinh}\lrt{\frac{ft}{mc}} $$
 
   \clearpage
   
@@ -673,9 +681,65 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   
   Chiamiamo osservabili gli operatori hermitiani ed autoaggiunti $\cH \rar \cH$ (in realtà solo quelli che ammettono una base di autovettori ortonormali, ma non ditelo ai fisici). In questo linguaggio l'operazione di ``misurare'' un osservabile $S$ sul nostro stato ad un tempo $t_0$ significa che $\Psi(t)$ per $t = t_0$ collassa in un autovettore dell'osservabile $S$ (e non ci poniamo problemi sull'equazione di Schrödinger, nel senso che ci va bene che non sia più soddisfatta), ma a noi viene fornito solamente l'autovalore relativo a quell'autovettore (quindi non possiamo sapere tutto se l'autospazio ha molteciplicità maggiore di uno). Sappiamo dire però qualcosa di più: la ``probabilità'' che collassi sull'autovettore $\phi$ è $\abs{\langle \Psi(t_0) | \phi \rangle}^2$ (di questi ne abbiamo una quantità al più numerabile perché l'Hilbert è separabile).
 
-  % \subsection*{Il caso di $\cH = \cL^2 \bbR$}
-  % In questo caso possiamo definire un operatore posizione $X$ ed un operatore impulso $P$ nel seguente modo:
-  % $$ X(x \mapsto f(x)) = x \mapsto x f(x), \hskip 1.5em P(x \mapsto f(x)) = x \mapsto \partial{f(x)}{x} $$
+  \subsection*{Il caso di $\cH = \cL^2 \bbR$}
+  In questo caso possiamo definire un operatore posizione $X$ ed un operatore impulso $P$ nel seguente modo:
+  \begin{displaymath}
+    \begin{array}{c}
+      X(x \mapsto f(x)) = x \mapsto x f(x) \\
+      P(x \mapsto f(x)) = x \mapsto -i \hbar \, \partial_x f(x) \\
+    \end{array}
+  \end{displaymath}
+  Notiamo infatti che l'operatore posizione ``ha le delta dei singoli punti come autovettori'' e quindi misurare uno stato sulla $X$ significa farne collassare la posizione in un punto.
+
+  Si ha la relazione $[P, X] = PX - XP = - i \hbar \neq 0$ (questo è fisicamente importante: se due osservabili commutano allora si possono diagonalizzare simultaneamente e quindi è possibile misurarli assieme).
+
+  Come Hamiltoniana consideriamo ``l'operatore'' $H = \frac{P^2}{2m} + V(X) = - \frac{\hbar^2}{2m} \partial_{xx} + V(X)$, dove $P$ è l'operatore posizione e $V(X)$ è un'operatore che dipende solo dall'operatore posizione (funzioni di $X$).
+
+  Dato un osservabile $O$ definiamo valore medio dell'osservabile su uno stato $\Psi$ come $\langle O \rangle \Psi = \int (O\Psi(x), \Psi(x)) \de x$. A volte, non essendo possibile in quantistica conoscere la posizione e l'impulso contemporaneamente, viene chiesto di calcolare il valor medio di uno dei due.
+  
+  \subsubsection*{Risoluzione degli esercizi}
+  Se imponiamo che le soluzioni del nostro sistema siano della forma $\Psi(x, t) = \phi(x) e^{-i\omega t}$ con energia $E = \hbar \omega$ otteniamo che le $\phi(x)$ devono soddisfare l'equazione
+  $$ \frac{\hbar^2}{2m} \partial_{xx} \phi(x) = (V(X) - E) \phi(x) $$
+  dove $V(X)$ è il potenziale che avrà una certa forma. Una volta determinate le soluzioni $\phi$, una generica soluzione dell'equazione di Schrödinger si scriverà come $\Psi(x, t) = \sum_\omega \phi_\omega(x) e^{-i \omega t}$ (dove ricordiamo $E = \hbar \omega$).
+
+  \subsubsection*{Soluzioni $\cC^1$}
+  Si può mostrare che se il potenziale è localmente limitato in un punto $p$, allora in quel punto le soluzioni dell'equazione d'onda sono $\cC^1$. Per questo bisogna, negli esercizi di seguito, imporre spesso anche le condizioni per un raccordo $\cC^1$. Attenzione però che se il potenziale è una delta oppure è infinito questa osservazione non vale.
+  
+  \subsubsection*{Potenziali separati}
+  Mettiamo di essere in $\bbR^3$ (dove $P = - i \hbar \nabla$ e chiederemo che il potenziale sia una funzione delle tre variabili spaziali $V(x, y, z)$) e supponiamo che il potenziale si scriva in questa forma $V(x, y, z) = V_x(x) + V_y(y) + V_z(z)$. Allora se consideriamo una soluzione $\Psi_x$ al problema $- i \hbar \partial_{xx}\Psi_x + V_x(x) \Psi_x = E \Psi_x$ e le rispettive per $y$ e per $z$, si ha che il loro prodotto $\Psi = \Psi_x(x)\Psi_y(y)\Psi_z(z)$ è una funzione che è soluzione del problema originario in $\bbR^3$.
+
+  L'energia della funzione $\Psi$ è la somma delle tre energie delle soluzioni separate.
+  
+  \subsection*{La buca di potenziale infinito}
+  In questo caso il nostro potenziale è
+  \begin{displaymath}
+    V(x) = \left\{
+      \begin{array}{cr}
+        \infty & x < 0 \text{ oppure } x > L \\
+        0 & 0 \le x \le L \\
+      \end{array}
+    \right.
+  \end{displaymath}
+  dove potete pensare l'$\infty$ come limite delle soluzioni per un potenziale molto grande.
+
+  In questo problema il modo di procedere è di dividere per casi le equazioni soddisfatte dalle soluzioni e poi effettuare un raccordo $\cC^0$ (non $\cC^1$ perché il potenziale è infinito) delle stesse. L'equazione da risolvere è quindi $\frac{\hbar^2}{2m} \partial_{xx} \phi(x) = (V(x) - E) \phi(x)$ ed è utile distinguere i casi $E > 0$ (per il quale si hanno delle soluzioni quantizzate) ed $E < 0$ per il quale si ha solo la soluzione nulla.
+  
+  \subsection*{La buca di potenziale finito}
+  In questo caso il potenziale è
+  \begin{displaymath}
+    V(x) = \left\{
+      \begin{array}{cr}
+        V_0 & \abs{x} > a \\
+        0 & \abs{x} < a \\
+      \end{array}
+    \right.
+  \end{displaymath}
+
+  Anche qui, come nel problema precedente, bisogna dividere per casi le equazioni soddisfatte dalle soluzioni e poi effettuare un raccordo $\cC^1$ delle stesse. I casi qualitativamente significativi sono $E > V_0$ (per il quale NON si ha quantizzazione; inoltre possiamo vedere come nella zona ``sopra'' alla buca di potenziale le soluzioni abbiano frequenza più alta rispetto alla loro parte ``fuori'' dalla buca) ed $E < V_0$ per i quali si hanno soluzioni quantizzate (anche se il loro numero dipende dal valore di $V_0$).
+  
+  \subsection*{Indeterminazione di Heisenberg}
+  In modi che non ci interessano troppo si ottiene $\sigma_x \sigma_p \ge \frac{\hbar}{2}$ (dove $\sigma$ sono le varianze rispettivamente della posizione e della quantità di moto, indicate anche con il nome di incertezze). Queste disuguaglianze così libere valgono per uno stato (funzione d'onda) fissato e dipendono dal fatto che $[x, p] \neq 0$.
+  
 \end{multicols}
 \end{document}
 
