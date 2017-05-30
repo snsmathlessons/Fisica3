@@ -403,9 +403,9 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   $$ I = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\delta}{2}} = \frac{4 \Psi_0^2}{r^2} \cos^2 \lrt{\frac{\pi d}{\lambda} \sin\theta} $$
 
   \begin{formula}[Equazioni nel vuoto]
-    \square = \nabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \\
+    \square = \partial_{\mu}\partial^{\mu} = \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \nabla^2 \\
     \text{Allora le equazioni nel vuoto diventano} \\
-    \square {\vec B} = 0, \hskip 1.5em \square {\vec E} = 0
+    \square {V} = 0, \hskip 1.5em \square {\vec A} = 0
   \end{formula}
 
   \subsection*{Formula Onda Piana nel vuoto, Polarizzazione lineare}
@@ -478,8 +478,8 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
       V =       & \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r}', t - \frac{\abs{\vec{r} - \vec{r}'}}{c})}{\abs{\vec{r} - \vec{r}'}} \de^3 r' \\
       \vec{A} = & \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{r}', t - \frac{\abs{\vec{r} - \vec{r}'}}{c})}{\abs{\vec{r} - \vec{r}'}} \de^3 r'     \\
     \end{eqsystem}
-    Ed è soddisfatta la Gauge di Lorentz: $\div {\vec A} + \frac{1}{c^2}
-    \frac{\partial^2 V}{\partial t^2} = 0$.
+    Ed è soddisfatta la Gauge di Lorentz: $\partial_{\mu}A^{\mu} = \frac{1}{c^2}
+    \frac{\partial V}{\partial t} + \div {\vec A}  = 0$.
   \end{paragrafo}
 
   \subsection*{Principia Relativitatis}
@@ -645,9 +645,11 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   \subsection*{Elettrodinamica Relativistica}
   \begin{displaymath}
     \begin{array}{c}
+      \partial^{\mu}=(\frac{1}{c} \frac{\partial}{\partial t},-\nabla)\\
       J^\mu = (c\rho, \vec J) \\
       A^\mu = (\frac{V}{c}, \vec A) \\
       F_{\alpha\beta} = \partial_\alpha A_\beta - \partial_\beta A_\alpha \\
+      \partial_{\mu}J^{\mu}=0, \, \, \, \, \partial_{\nu}F^{\mu \nu}=\mu_0 J^{\mu} \\
     \end{array}
   \end{displaymath}
   e sono quadrivettori / quadritensori.
