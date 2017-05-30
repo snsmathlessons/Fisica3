@@ -778,6 +778,154 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   In modi che non ci interessano troppo si ottiene $\sigma_x \sigma_p \ge \frac{\hbar}{2}$ (dove $\sigma$ sono le varianze rispettivamente della posizione e della quantità di moto, indicate anche con il nome di incertezze). Queste disuguaglianze così libere valgono per uno stato (funzione d'onda) fissato e dipendono dal fatto che $[x, p] \neq 0$.
 
   Ricordiamo inoltre che se conosciamo lo stato $\Psi$ possiamo calcolare $\sigma_x$ come $\langle x^2 \rangle - {\langle x \rangle}^2$.  
+
+  \clearpage
+  \section*{Integralia}
+  Riportiamo di seguito le primitive di alcuni tra i più comuni integrali fisici. Attenzione: dove vengono riportati più uguali significa che le funzioni sulla destra sono due diverse primitive, non è detto che valga l'uguaglianza tra di esse nello stesso punto!
+
+  \begin{align*}
+    \int \frac{\de x}{\sqrt{1 + x^2}} & = \text{settsinh}(x)
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{(1 + x^2)^{\frac{3}{2}}} & = \frac{x}{\sqrt{1 + x^2}}
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{1 + x^2} & = \text{arctan}(x)
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{\sqrt{1 - x^2}} & = \text{arcsin}(x)   & \text{per } x < 1 \\
+                                      & = - \text{arccos}(x) & 
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{\sqrt{x^2 - 1}} & = \log \lrt{\sqrt{x^2 - 1} + x} & \text{per } x > 1 \\
+                                      & = \text{settcosh}(x)            & 
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{(1 - x^2)^{\frac{3}{2}}} & = \frac{x}{\sqrt{1 - x^2}} & \text{per } x < 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{(x^2 - 1)^{\frac{3}{2}}} & = - \frac{x}{\sqrt{x^2 - 1}} & \text{per } x > 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{1 - x^2} & = \frac{1}{2} \lrt{\log (x + 1) - \log (1 - x)} \\
+                               & = \text{setttanh}(x)
+  \end{align*}
+
+  \begin{align*}
+    \int \frac{x \, \de x}{\sqrt{1 + x^2}} & = \sqrt{1 + x^2}
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{(1 + x^2)^{\frac{3}{2}}} & = - \frac{1}{\sqrt{1 + x^2}} 
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{1 + x^2} & = \frac{1}{2} \log(x^2 + 1)
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{\sqrt{1 - x^2}} & = - \sqrt{1 - x^2} & \text{per } x < 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{\sqrt{x^2 - 1}} & = \sqrt{x^2 - 1} & \text{per } x > 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{(1 - x^2)^{\frac{3}{2}}} & = \frac{1}{\sqrt{1 - x^2}} & \text{per } x < 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{(x^2 - 1)^{\frac{3}{2}}} & = - \frac{1}{\sqrt{x^2 - 1}} & \text{per } x > 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{1 - x^2} & = - \frac{1}{2} \log(1 - x^2) & \text{per } x < 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{x \, \de x}{x^2 - 1} & = \frac{1}{2} \log(x^2 - 1) & \text{per } x > 1
+  \end{align*}
+
+  \begin{align*}
+    \int \frac{\de x}{x \sqrt{1 + x^2}} & = \log(x) - \log\lrt{\sqrt{x^2 + 1} + 1}
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{x \sqrt{1 - x^2}} & = \log(x) - \log\lrt{\sqrt{1 - x^2} + 1} & \text{per } x < 1
+  \end{align*}
+  \begin{align*}
+    \int \frac{\de x}{x \sqrt{x^2 - 1}} & = - \text{arctan}\lrt{\frac{1}{\sqrt{x^2 - 1}}} & \text{per } x > 1
+  \end{align*}
+  
+  \section*{Funzioni trigonometriche}
+  \subsection*{Alcune definizioni}
+  \begin{align*}
+    \tan\theta = \frac{\sin\theta}{\cos\theta} & , & \cot\theta = \frac{\cos\theta}{\sin\theta} \\
+    \sec\theta = \frac{1}{\cos\theta}          & , & \csc\theta = \frac{1}{\sin\theta}          \\
+  \end{align*}
+
+  \subsection*{Parità ed Altre}
+  \begin{align*}
+    \sin^2 x + \cos^2 x = 1 & , & \cosh^2 x - \sinh^2 x = 1  \\
+                            &   & \cosh x + \sinh x = e^x    \\
+                            &   & \cosh x - \sinh x = e^{-x} \\
+    \sin(-x) = - \sin(x)    & , & \sinh(-x) = - \sinh(x)     \\
+    \cos(-x) = \cos(x)      & , & \cosh(-x) = \cosh(x)       \\
+  \end{align*}
+  
+  \subsection*{Traslazioni}
+  \begin{align*}
+    \sin\theta = \cos\lrt{\frac{pi}{2} - \theta} & , & \cos\theta = \sin\lrt{\frac{pi}{2} - \theta} \\
+    \tan\theta = \cot\lrt{\frac{pi}{2} - \theta} & , & \cot\theta = \tan\lrt{\frac{pi}{2} - \theta} \\
+    \sec\theta = \csc\lrt{\frac{pi}{2} - \theta} & , & \csc\theta = \sec\lrt{\frac{pi}{2} - \theta} \\
+  \end{align*}
+
+  \subsection*{Formule di addizione}
+  \begin{align*}
+    \sin(x \pm y) = \sin(x) \cos(y) \pm \cos(x) \sin(y)          \\
+    \cos(x \pm y) = \cos(x) \cos(y) \mp \sin(x) \sin(y)          \\
+    \tan(x + y) = \frac{\tan x + \tan y}{1 - \tan x \tan y}      \\
+    \sinh(x \pm y) = \sinh(x) \cosh(y) \pm \cosh(x) \sinh(y)     \\
+    \cosh(x \pm y) = \cosh(x) \cosh(y) \pm \sinh(x) \sinh(y)     \\
+    \tanh(x + y) = \frac{\tanh x + \tanh y}{1 + \tanh x \tanh y} \\
+  \end{align*}
+
+  \subsection*{Derivate ed integrali}
+  \begin{center}
+    \begin{tabular}{| C | R | R |}
+      \hline
+      f(x)    & f'(x)                         & \int f(x) \de x             \\
+      \hline
+      \sin x  & \cos x                        & - \cos x                    \\
+      \cos x  & - \sin x                      & \sin x                      \\
+      \tan x  & \sec^2 x = 1 + \tan^2 x       & - \log \abs{\cos x}         \\
+      \cot x  & - \csc^2 x = - (1 + \cot^2 x) & \log \abs{\sin x}           \\
+      \sec x  & \sec x \tan x                 & \ln \abs{\sec x + \tan x}   \\
+      \csc x  & - \csc x \cot x               & - \ln \abs{\csc x + \cot x} \\
+      \hline
+      \sinh x & \cosh x                       & \cosh x                     \\
+      \cosh x & \sinh x                       & \sinh x                     \\
+      \tanh x & 1 - \tanh^2 x                 & \log \cosh x                \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \section*{Espressioni Analitiche}
+  \begin{align*}
+    \sinh x = \frac{e^x - e^{-x}}{2} = \frac{e^{2x} - 1}{2 e^x}                 &                         \\
+    \cosh x = \frac{e^x + e^{-x}}{2} = \frac{e^{2x} + 1}{2 e^x}                 &                         \\
+    \tanh x = \frac{e^{2x} - 1}{e^{2x} + 1} = \frac{e^x - e^{-x}}{e^x + e^{-x}} &                         \\
+    \text{settsinh}(x) = \log\lrt{x + \sqrt{x^2 + 1}}                           &                         \\
+    \text{settcosh}(x) = \log\lrt{x + \sqrt{x^2 - 1}}                           & \text{per } x \ge 1     \\
+    \text{setttanh}(x) = \frac{1}{2} \log\lrt{\frac{1 + x}{1 - x}}              & \text{per } \abs{x} < 1 \\
+  \end{align*}
+  
+  \section*{Sviluppini}
+  \begin{align*}
+    \sin x       & = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots                                & \forall x               \\
+    \cos x       & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots                                & \forall x               \\
+    \tan x       & = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \ldots            & \abs{x} < \frac{\pi}{2} \\
+    \csc x       & = \frac{1}{x} + \frac{x}{6} + \frac{7x^3}{360} + \frac{31x^5}{15120} + \ldots & 0 < \abs{x} < \pi       \\
+    \sec x       & = 1 + \frac{x^2}{2} + \frac{5x^4}{24} + \frac{61x^6}{720} + \ldots            & \abs{x} < \frac{\pi}{2} \\
+    \cot x       & = \frac{1}{x} - \frac{x}{3} - \frac{x^3}{45} - \frac{2x^5}{945} - \ldots      & 0 < \abs{x} < \pi       \\
+    \sinh x      & = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots                                &                         \\
+    \cosh x      & = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \ldots                                &                         \\
+    \tanh x      & = x - \frac{x^3}{3} + \frac{2x^5}{15} - \frac{17 x^7}{315} + \ldots           & \abs{x} < \frac{\pi}{2} \\
+    e^x          & = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots                            &                         \\
+    \log (1 + x) & = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots                  & \text{per } \abs{x} < 1 \\
+  \end{align*}
 \end{multicols}
 \end{document}
 
