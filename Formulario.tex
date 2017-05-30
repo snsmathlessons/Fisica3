@@ -307,7 +307,7 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
 
   \clearpage
   
-  \section{Onde}
+  \section{Onde e Relatività}
   \subsection*{Generalitate}
   \begin{tabular}{lc}
     Equazione d'onda         & $\partial_{xx} \Psi - \frac{1}{c^2} \partial_{tt} \Psi = 0$ \\
@@ -659,8 +659,21 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
       F_{\alpha\beta} = \partial_\alpha A_\beta - \partial_\beta A_\alpha \\
     \end{array}
   \end{displaymath}
-  e sono quadrivettori.
+  e sono quadrivettori / quadritensori.
 
+  In particolare riportiamo la forma di $F_{\alpha\beta}$:
+  \begin{displaymath}
+    \lrt{
+      \begin{array}{cccc}
+        0               & \frac{E_x}{c} & \frac{E_y}{c} & \frac{E_z}{c} \\
+        - \frac{E_x}{c} & 0             & - B_z         & B_y           \\
+        - \frac{E_y}{c} & B_z           & 0             & - B_x         \\
+        - \frac{E_z}{c} & - B_y         & B_x           & 0             \\
+      \end{array}
+    }
+  \end{displaymath}
+  Per ottenere $F^{\mu\nu}$ basta cambiare segno a tutte le componenti con la $E$ e lasciare invariate quelle con la $B$.
+  
   \subsection*{Moto uniformemente accelerato}
   Vogliamo studiare il moto, in un sistema di riferimento $\Sigma$, di una particella - inizialmente ferma - soggetta a forza costante $\vec f = (f, 0, 0)$. Sia $\vec v(t) = (v(t), 0, 0)$ (è la fisica che ce lo dice); allora è soddisfatta la seguente equazione:
   $$ f = \ded{}{t} \lrt{m \cdot \gamma(v(t)) \cdot v(t)} $$
