@@ -673,6 +673,39 @@ A seconda del verso di percorrenza un ciclo può essere una macchina termica o u
   $$ \tau(t) = \frac{mc}{f} \cdot \text{settsinh}\lrt{\frac{ft}{mc}} $$
 
   \clearpage
+  \section*{Corpi Neri}
+  Con corpo nero si intende un oggetto (ideale) che assorbe tutta la radiazione elettromagnetica incidente senza rifletterla, ovvero tutta l'energia incidente viene re-irradiata (coefficiente di emissione uguale a quello di assorbimento uguale a uno).
+
+  È un radiatore ideale ed emette il maggior flusso possibile per unità di superficie, ad ogni lunghezza d'onda per ogni data temperatura. Uno spettro di corpo nero quasi perfetto viene esibito dalla radiazione cosmica di fondo, la cui temperatura è di circa 2,7 Kelvin.
+
+  \subsection*{Legge di radiazione di Planck}
+  La distribuzione di intensità della radiazione di corpo nero alla temperatura $T$ è
+  $$ I(\nu) \de \nu = \frac{2 \pi h \nu^3}{c^2} \frac{1}{e^{\frac{h\nu}{k_B T}} - 1} \de \nu $$
+  dove $I(\nu) \de \nu$ è la quantità di energia per unità di superficie, per unità di tempo e per unità di angolo solido, emessa nell'intervallo di frequenze compreso tra $\nu$ e $\nu + \de \nu$, $h$ è la costante di Planck (non tagliata), $k$ la costante di Bolzmann. L'espressione di sopra va interpretata come una distribuzione, cioè ha senso solo in espressioni integrali.
+
+  \subsubsection*{Lunghezza d'onda di massima intensità}
+  La lunghezza d'onda alla quale l'intensità della radiazione emessa dal corpo nero è massima è data dalla legge di Wien:
+  $$ \lambda_\text{max} T = 2898 \quad \mu m \cdot K $$
+
+  \subsubsection*{Potenza totale per unità di superficie}
+  La potenza totale emessa per unità di superficie (l'intensità) è data dalla legge di Stefan-Boltzmann:
+  $$ I = \sigma T^4 $$
+  dove $\sigma = 5,67 \cdot 10^{-8} \quad W / (m^2 K^4)$
+
+  \subsection*{Legge di radiazione di Rayleigh-Jeans}
+  È un tentativo di descrivere lo spettro di emissione di un corpo nero basata su un modello classico. Questa legge arriva a prevedere che un corpo nero possa emettere radiazione con potenza infinita. Questa predizione evidentemente errata (detta catastrofe ultravioletta) fu risolta dalla legge di Planck.
+
+  $$ B_\nu (T) = \frac{2 \nu^2 k_B T}{c^2} $$
+  dove $B_\nu$ è l'irradianza spettrale, $k_B = 1,38064 \cdot 10^{-23} \quad J K^{-1}$ è la costante di Bolzmann e $T$ è la temperatura in Kelvin.
+
+  La legge di Rayleigh-Jeans coincide con i risultati sperimentali a basse frequenze ma è in forte disaccordo ad alte frequenze. Sviluppando la legge di Planck utilizzando lo sviluppo in serie dell'esponenziale e tenendo il primo termine non banale si ottiene proprio questa legge.
+
+  \section*{Effetto Fotoelettrico}
+  È l'emissione di elettroni da una superficie (solitamente metallica) quando questa viene colpita da una radiazione elettromagnetica, ossia da fotoni aventi una certa lunghezza d'onda. Einstein comprese che era un singolo fotone per volta, e non l'intera onda, ad interagire singolarmente con un elettrone, al quale cede la sua energia. Affinché ciò si verifichi è però necessario che il singolo fotone abbia un'energia sufficiente a rompere il legame elettrico che tiene legato l'elettrone all'atomo. Questa soglia minima di energia si determina in base alla relazione di Planck
+  $$ E = hf = h \frac{c}{\lambda} $$
+  dove $h$ è la costante di Planck, $f$ e $\lambda$ sono rispettivamente la frequenza e la lunghezza d'onda del fotone, $c$ è la velocità della luce.
+
+  L'elettrone può uscire dal metallo solo se l'energia del fotone è almeno uguale al ``lavoro di estrazione'' ($hf \ge W_e$). Va precisato che aumentando l'intensità della radiazione elettromagnetica (ossia il numero di fotoni al secondo, di pari energia, che colpiscono l'unità di superficie) aumenta il numero degli elettroni estratti ma non la loro energia cinetica, che dipende solo dall'energia dei fotoni incidenti.
   
   \section*{Meccanica Quantistica}
   Supponiamo di avere uno spazio di Hilbert $\cH$ (anche infinito dimensionale ma comunque separabile). Chiamiamo stati delle funzioni $\bbR \rar \cH$, che indicheremo solitamente con $\Psi(t)$, supposti a valori di modulo unitario. Questi stati evolvono (ovvero devono soddisfare) secondo l'equazione di Schrödinger
